@@ -1,0 +1,9 @@
+.Fusion_Nav {
+    background-color: #aaa;
+    border: 1px solid black;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 1.35em;
+}

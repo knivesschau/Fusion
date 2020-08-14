@@ -1,0 +1,9 @@
+.Landing_Page {
+    text-align: center;
+    font-size: 1em;
+}
+
+.Intro_Tagline, .Second_Tagline, .Third_Tagline {
+    border: 1px solid black;
+    margin: 2em;
+}

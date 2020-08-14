@@ -1,0 +1,27 @@
+.Recipe_Fuser {
+   background-color: #aaa;
+   border: 1px solid black;
+   margin: 2em;
+}
+
+#culinary-styles {
+    width: auto;
+    font-size: 1em;
+}
+
+#plus-icon, #plus-icon2 {
+    padding: .25em;
+}
+
+#save-recipe, #cancel-fuse {
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin: .75em;
+}
+
+#recipe-steps, #recipe-ingredients {
+    text-align: left;
+    padding-left: 0;
+    margin: 1em;
+}

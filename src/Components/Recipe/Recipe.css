@@ -1,0 +1,31 @@
+.RecipeMain {
+    font-size: 1.10em;
+}
+
+.Sample_Recipe1, .Sample_Recipe2 {
+    text-align: center;
+    border: 1px solid black;
+    margin: 2.5em;
+}
+
+.Sample_Recipe1 {
+    background-color: #aaa;
+}
+
+#ingredients-list {
+    padding-left: 1em;
+    margin: 1em;
+}
+
+#steps-list {
+    padding-left: 1em;
+    margin-right: .5em;
+    margin: .5em;
+}
+
+#modify-recipe, #delete-recipe, #modify-recipe2, #delete-recipe2 {
+   font-size: 1em;
+   margin-left: auto;
+   margin-right: auto;
+   margin: .5em;
+}
