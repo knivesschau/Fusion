@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all nested Components 1`] = `
+<Fragment>
+  <section
+    className="Base_Recipe"
+  >
+    <div
+      className="Base_RecipeInfo"
+    >
+      <h2
+        id="base-title"
+      />
+      <h3
+        id="starting-cuisine"
+      >
+        Culinary Style: 
+      </h3>
+    </div>
+    <div
+      className="Base_Ingredients"
+    >
+      <h4
+        id="base-ingredients"
+      >
+        <u>
+          Ingredients
+        </u>
+      </h4>
+      <ul>
+        <li
+          id="starting-ingredients"
+          key="0"
+        />
+      </ul>
+    </div>
+    <div
+      className="Steps_Section"
+    >
+      <h4
+        id="steps-title"
+      >
+        <u>
+          Steps
+        </u>
+      </h4>
+      <ol>
+        <li
+          id="starting-steps"
+          key="0"
+        />
+      </ol>
+    </div>
+  </section>
+</Fragment>
+`;

@@ -2,14 +2,10 @@
     font-size: 1.10em;
 }
 
-.Sample_Recipe1, .Sample_Recipe2 {
+.Recipe_Expand {
     text-align: center;
     border: 1px solid black;
     margin: 2.5em;
-}
-
-.Sample_Recipe1 {
-    background-color: #aaa;
 }
 
 #ingredients-list {

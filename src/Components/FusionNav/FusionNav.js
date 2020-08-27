@@ -22,7 +22,7 @@ export default class FusionNav extends Component {
                     Cookbook
                 </Link>
 
-                <Link to="/fuse">
+                <Link to="/starter-recipes">
                     Fuse
                 </Link>
             </div>

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe Component Renders the complete Recipe Component and all nested Components 1`] = `
+<section
+  className="RecipeMain"
+>
+  <div
+    className="Recipe_Expand"
+  >
+    <h2
+      id="recipe-title"
+    />
+    <h3
+      id="cuisine-styles"
+    >
+      , 
+    </h3>
+    <h4
+      id="date-changed"
+    >
+      Last Modified: 
+      Invalid Date
+       
+    </h4>
+    <Link
+      to="/edit-recipe/undefined"
+    >
+      <button
+        id="modify-recipe"
+        type="button"
+      >
+        Modify
+      </button>
+    </Link>
+    <button
+      id="delete-recipe"
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+    <div
+      className="Ingredients_Section"
+    >
+      <h4
+        id="ingredients-title"
+      >
+        <u>
+          Ingredients
+        </u>
+      </h4>
+      <ul>
+        <li
+          id="ingredients-list"
+          key="0"
+        />
+      </ul>
+    </div>
+    <div
+      className="Steps_Section"
+    >
+      <h4
+        id="steps-title"
+      >
+        <u>
+          Steps
+        </u>
+      </h4>
+      <ol>
+        <li
+          id="steps-list"
+          key="0"
+        />
+      </ol>
+    </div>
+  </div>
+</section>
+`;

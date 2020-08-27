@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FuseRecipe Component Renders the complete FuseRecipe Component and all nested Components 1`] = `
+<section
+  className="Fuse_Recipe"
+>
+  <form
+    className="Fusion_Form"
+    onSubmit={[Function]}
+  >
+    <RecipeEditor />
+    <button
+      id="submit-recipe"
+      type="submit"
+    >
+      Save Recipe
+    </button>
+    <button
+      id="start-over"
+      type="reset"
+    >
+      Start Over
+    </button>
+  </form>
+</section>
+`;

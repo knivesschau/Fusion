@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeInfo Component Renders the complete RecipeInfo Component and all nested Components 1`] = `
+<section
+  className="Recipe_Info"
+>
+  <div
+    className="Recipe_Mini"
+  >
+    <Link
+      id="Recipe_MiniInfo"
+      to="/view-recipe/undefined"
+    >
+      <h2
+        id="recipe-name"
+      />
+    </Link>
+    <h3
+      id="recipe-created"
+    >
+      Recipe created on: 
+      Invalid Date
+    </h3>
+    <h4
+      id="culinary-styles"
+    >
+      , 
+    </h4>
+  </div>
+</section>
+`;

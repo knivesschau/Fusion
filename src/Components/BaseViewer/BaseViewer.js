@@ -1,49 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import fusionContext from '../../fusionContext';
+import BaseRecipe from '../BaseRecipe/BaseRecipe'
 import './BaseViewer.css';
 
-export default function BaseViewer(props) {
-    return (
-        <>
-        <section className="Recipe_Fuser"> 
+export default class BaseView extends Component {
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    };
 
-            <h4>Fusing: Grilled Cheese</h4>
+    handleCancelClick = () => {
+        this.props.history.push(`/starter-recipes`);
+    };
 
-            <label htmlFor="select-second-cuisine">
-                <h4>Are you fusing your recipe with another cooking style?</h4>
+    static contextType = fusionContext;
+
+    render() {
+
+        const {bases=[]} = this.context; 
+        const {recipe_id} = this.props.match.params; 
+        const baseRecipe = bases.find(base => base.recipe_id === parseInt(recipe_id)) || {};
+
+        return (
+            <section className="View_Base">
+                <BaseRecipe
+                    recipe_id={baseRecipe.recipe_id}
+                    base_name={baseRecipe.base_name}
+                    cuisine_name={baseRecipe.cuisine_name}
+                    ingredients={baseRecipe.ingredients}
+                    steps={baseRecipe.steps}
+                />
                 
-                <select name="cuisine" id="culinary-styles">
-                    <option value="">---Select One---</option>
-                    <option value="No">No</option>
-                    <option value="American">American</option>
-                    <option value="Mexican">Mexican</option>
-                </select>
-            </label>
+            <button type="button" onClick={e => this.props.history.push(`/fuse/${recipe_id}`)}>Fuse Recipe</button>
+            <button type="button" onClick={this.handleCancelClick}>Pick Another Recipe</button>
 
-            <div className="Edit_Ingredients">
-                <h4><u>Ingredients</u></h4>
-
-                <ul>
-                    {props.recipes[2].ingredients.map((ingredients, i) => {
-                        return <li key={i} id="recipe-ingredients">{ingredients}<Link id="plus-icon" to="/fuse">+</Link><input id="ingredient-editor" type="text"/></li>
-                    })}
-                </ul>
-            </div>
-
-            <div className="Edit_Steps">
-                <h4><u>Steps</u></h4>
-                
-                <ol>
-                    {props.recipes[2].steps.map((step, i) => {
-                        return <li key={i} id="recipe-steps">{step}<Link id="plus-icon2" to="/fuse">+</Link><input id="steps-editor"/></li>
-                    })}
-                </ol>
-            </div>
-
-            <button id="save-recipe" type="submit">Save Recipe</button>
-            <button id="cancel-fuse" type="button">Cancel</button>
-
-        </section>
-        </>
-    );
-}
+            </section>
+        );
+    };
+};

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseViewer Component Renders the complete BaseViewer Component and all nested Components 1`] = `
+<section
+  className="View_Base"
+>
+  <BaseRecipe />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Fuse Recipe
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Pick Another Recipe
+  </button>
+</section>
+`;

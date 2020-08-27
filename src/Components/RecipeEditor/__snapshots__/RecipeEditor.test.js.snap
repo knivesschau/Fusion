@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeEditor Component Renders the complete RecipeEditor Component and all nested Components 1`] = `
+<Fragment>
+  <section
+    className="Recipe_Editor"
+  >
+    <h1
+      id="fuse-info"
+    >
+      Fusing: 
+    </h1>
+    <div
+      className="Title_Editor"
+    >
+      <h1>
+        Enter A New Recipe Title:
+      </h1>
+      <input
+        name="fuse_name"
+      />
+    </div>
+    <div
+      className="Fuse_Cuisine"
+    >
+      <p
+        id="cuisine-info"
+      >
+        Your starting culinary style is: 
+         
+      </p>
+      <input
+        name="base_cuisine"
+        type="hidden"
+      />
+      <label
+        htmlFor="cuisines"
+        name="fuse_cuisine"
+      >
+        Select your second cuisine:
+      </label>
+      <select
+        name="fuse_cuisine"
+      >
+        <option
+          key=""
+        >
+          --Select One--
+        </option>
+      </select>
+    </div>
+    <div
+      className="Edit_Ingredients"
+    >
+      <h2>
+        Ingredients
+      </h2>
+      <ul>
+        <li
+          key="0"
+        >
+          <input
+            defaultValue=""
+            id="edit-ingredients"
+            key="0"
+            name="fuse_steps"
+            onChange={[Function]}
+            type="text"
+          />
+        </li>
+      </ul>
+    </div>
+    <div
+      className="Edit_Steps"
+    >
+      <h2>
+        Steps
+      </h2>
+      <ol>
+        <li
+          key="0"
+        >
+          <textarea
+            defaultValue=""
+            id="edit-steps"
+            key="0"
+            name="fuse_ingredients"
+            onChange={[Function]}
+            rows="10"
+          />
+        </li>
+      </ol>
+    </div>
+  </section>
+</Fragment>
+`;

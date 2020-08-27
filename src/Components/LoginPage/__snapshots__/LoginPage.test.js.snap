@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage Component Renders the complete LoginPage Component and all nested Components 1`] = `
+<section
+  className="Login_Page"
+>
+  <h3>
+    Log In (Will Be Included in Final Version)
+  </h3>
+  <form
+    className="Login_Form"
+  >
+    <label
+      htmlFor="username"
+    >
+      <p
+        id="return-user"
+      >
+        Username:
+      </p>
+      <input
+        id="return-app-user"
+        name="return_username"
+        type="text"
+      />
+    </label>
+    <label
+      htmlFor="password"
+    >
+      <p
+        id="return-pass"
+      >
+        Password:
+      </p>
+      <input
+        id="user-password"
+        name="return_password"
+        type="password"
+      />
+    </label>
+    <button
+      id="user-login"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</section>
+`;

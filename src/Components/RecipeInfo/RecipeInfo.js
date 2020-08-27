@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
+import fusionContext from '../../fusionContext';
 import { Link } from 'react-router-dom';
 import './RecipeInfo.css';
 
-export default function RecipeInfo(props) {
-    return (
-        <section className="Recipe_Info">
-            
-            <div className="Recipe_1_Sample">
-                <Link id="Recipe_MiniInfo" to="/view-recipe">
-                    <h2>{props.recipes[0].name}</h2>
-                </Link>
-                
-                <h3>Recipe created on {props.recipes[0].date_modified}</h3>
-                <h3>{props.recipes[0].cuisine}</h3>
-            </div>
+export default class RecipeInfo extends Component {
+    
+    static contextType = fusionContext; 
 
-            <div className="Recipe_2_Sample">
-                <Link id="Recipe_2_Sample" to="/view-recipe">
-                    <h2>{props.recipes[1].name}</h2>
-                </Link>
+    renderCuisineInfo() {
+        const {base_cuisine, fuse_cuisine} = this.props;
 
-                <h3>Recipe created on {props.recipes[1].date_modified}</h3>
-                <h3>{props.recipes[1].cuisine}</h3> 
-            </div>
+        if (fuse_cuisine === null || fuse_cuisine === 'None') {
+            return (
+                <>{base_cuisine}</>
+            );
+        }
+        else {
+            return (
+                <>{base_cuisine}, {fuse_cuisine}</>
+            );
+        }
+    };
 
-        </section>
-    );
-}
+    render() {
+
+        const {fused_id, fused_name, date_created} = this.props;
+
+        return (
+            <section className="Recipe_Info">
+                 
+                 <div className="Recipe_Mini">
+                    
+                    <Link id="Recipe_MiniInfo" to={`/view-recipe/${fused_id}`}>
+                        <h2 id="recipe-name">{fused_name}</h2>
+                    </Link>
+
+                    <h3 id="recipe-created">Recipe created on: {new Date(date_created).toLocaleDateString()}</h3>
+
+                    <h4 id="culinary-styles">{this.renderCuisineInfo()}</h4>
+                </div>
+
+            </section>
+        );
+    };
+};

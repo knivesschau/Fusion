@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewRecipe Component Renders the complete ViewRecipe Component and all nested Components 1`] = `
+<section
+  className="Recipe_Viewer"
+>
+  <Recipe
+    onDeleteFusion={[Function]}
+  />
+</section>
+`;

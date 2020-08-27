@@ -4,6 +4,11 @@
     margin: 2em;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 #cookbook-home {
     font-size: 1.75em;
 }

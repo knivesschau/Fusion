@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewCookbook Component Renders the complete ViewCookbook Component and all nested Components 1`] = `
+<section
+  className="Your_Cookbook"
+>
+  <h1
+    id="cookbook-home"
+  >
+    Your Cookbook
+  </h1>
+  <ul />
+</section>
+`;

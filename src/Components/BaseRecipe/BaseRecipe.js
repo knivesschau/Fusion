@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+import fusionContext from '../../fusionContext';
+import './BaseRecipe.css';
+
+export default class BaseRecipe extends Component {
+
+    static contextType = fusionContext; 
+
+    render() {
+
+        const {base_name, cuisine_name, ingredients, steps} = this.props; 
+        const convertIngredients = Object.values({ingredients}).toString();
+        const convertSteps = Object.values({steps}).toString();
+        const starter_ingredients = convertIngredients.split('\n');
+        const starter_steps = convertSteps.split('\n');
+
+        return (
+            <>
+            <section className="Base_Recipe">
+                
+                <div className="Base_RecipeInfo">
+                    <h2 id="base-title">{base_name}</h2>
+                    <h3 id="starting-cuisine">Culinary Style: {cuisine_name}</h3>
+                </div>
+
+                <div className="Base_Ingredients">
+                        <h4 id="base-ingredients"><u>Ingredients</u></h4>
+                        
+                        <ul>
+                            {starter_ingredients.map((ingredient, i) => {
+                                return (
+                                    <li id="starting-ingredients" key={i}>{ingredient}</li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                
+                    <div className="Steps_Section">
+                        <h4 id="steps-title"><u>Steps</u></h4>
+                        
+                        <ol>
+                            {starter_steps.map((step, i) => {
+                                return (
+                                    <li id="starting-steps" key={i}>{step}</li>
+                                );
+                            })}
+                        </ol>
+                    </div>
+
+            </section>
+            </>
+        );
+    };
+};

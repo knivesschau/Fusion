@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FusionNav Component Renders the complete FusionNav Component and all nested Components 1`] = `
+<div
+  className="Fusion_Nav"
+>
+  <Link
+    to="/"
+  >
+    Home
+  </Link>
+  <Link
+    to="/register"
+  >
+    Sign Up
+  </Link>
+  <Link
+    to="/login"
+  >
+    Login
+  </Link>
+  <Link
+    to="/your-cookbook"
+  >
+    Cookbook
+  </Link>
+  <Link
+    to="/starter-recipes"
+  >
+    Fuse
+  </Link>
+</div>
+`;

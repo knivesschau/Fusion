@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PickStarter Component Renders the complete PickStarter Component and all nested Components 1`] = `
+<Fragment>
+  <section
+    className="Pick_Starter"
+  >
+    <div
+      className="Starter_Recipes"
+    >
+      <h1
+        id="begin-fuse"
+      >
+        Begin Fusing
+      </h1>
+      <h2
+        id="select-recipe"
+      >
+        Select a Starter Recipe to Begin Fusing:
+      </h2>
+      <ul
+        id="starter-recipes"
+      />
+    </div>
+  </section>
+</Fragment>
+`;
