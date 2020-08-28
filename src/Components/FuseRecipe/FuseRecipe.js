@@ -16,9 +16,11 @@ export default class FuseRecipe extends Component {
 
     static contextType = fusionContext;
 
-    handleSubmit = e => {
+    handleSubmit = (e, i) => {
         e.preventDefault();
-        
+
+        console.log(e.target);
+        debugger
         const newRecipe = {
             date_created: new Date(),
             fused_name: e.target['fuse_name'].value,
@@ -27,6 +29,10 @@ export default class FuseRecipe extends Component {
             fuse_ingredients: e.target['fuse_ingredients'].value,
             fuse_steps: e.target['fuse_steps'].value,
         };
+
+        console.log(newRecipe);
+
+        debugger 
 
         fetch(`${config.API_ENDPOINT}/recipes`, {
             method: 'POST',

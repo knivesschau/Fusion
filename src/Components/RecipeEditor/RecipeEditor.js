@@ -7,11 +7,11 @@ export default class RecipeEditor extends Component {
     
     static contextType = fusionContext;
 
-    handleInput(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
+    // handleInput(e) {
+    //     this.setState({
+    //         [name]: e.target.value
+    //     });
+    // };
     
     render() {
 
@@ -70,10 +70,9 @@ export default class RecipeEditor extends Component {
                             <input 
                                 key={i}
                                 type="text" 
-                                id="edit-ingredients"
-                                name="fuse_steps"
-                                defaultValue={ingredient}
-                                onChange={e => this.handleInput(e)}/>
+                                id={`fuse_ingredients ${i}`}
+                                name="fuse_ingredients"
+                                defaultValue={ingredient}/>
                             </li>
                         );
                     })}
@@ -89,11 +88,10 @@ export default class RecipeEditor extends Component {
                                 <li key={i}>
                                     <textarea 
                                         key={i}
-                                        name="fuse_ingredients"
-                                        id="edit-steps"  
+                                        id={`fuse_steps ${i}`}
+                                        name="fuse_steps"
                                         rows="10" 
-                                        defaultValue={step}
-                                        onChange={e => this.handleInput(e)}/> 
+                                        defaultValue={step}/>
                                 </li>
                             );
                         })}
