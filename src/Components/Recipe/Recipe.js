@@ -41,12 +41,12 @@ export default class Recipe extends Component {
 
         if (fuse_cuisine === null || fuse_cuisine === 'None') {
             return (
-                <h3 id="cuisine-styles">{base_cuisine}</h3>
+                <h3 id="cuisine-styles-single">{base_cuisine}</h3>
             );
         }
         else {
             return (
-                <h3 id="cuisine-styles">{base_cuisine}, {fuse_cuisine}</h3>
+                <h3 id="cuisine-styles-both">{base_cuisine}, {fuse_cuisine}</h3>
             );
         }
     };
@@ -55,11 +55,11 @@ export default class Recipe extends Component {
 
         const {fused_id, fused_name, date_modified, fuse_ingredients, fuse_steps} = this.props;
         
-        // convert data into presentable format on client
+        // convert recipe data into presentable format on client
         const convertIngredients = Object.values({fuse_ingredients}).join();
         const fused_ingredients = convertIngredients.split("\n");
         
-        // convert data into presentable format on client
+        // convert recipe data into presentable format on client
         const convertSteps = Object.values({fuse_steps}).join();
         const fused_steps = convertSteps.split("\n");
 
@@ -74,7 +74,7 @@ export default class Recipe extends Component {
                     
                     <h4 id="date-changed">Last Modified: {new Date(date_modified).toLocaleDateString()} </h4>
 
-                    <Link to={`/edit-recipe/${fused_id}`}>
+                    <Link to={`/modify-recipe/${fused_id}`}>
                         <button id="modify-recipe" type="button">Modify</button>
                     </Link>
 

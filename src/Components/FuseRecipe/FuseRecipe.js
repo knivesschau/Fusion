@@ -5,6 +5,16 @@ import RecipeEditor from '../RecipeEditor/RecipeEditor';
 import './FuseRecipe.css';
 
 export default class FuseRecipe extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            ...props 
+        };
+
+        this.baseState = this.state;
+    };
+    
     static defaultProps = {
         match: {
             params: {}
@@ -14,17 +24,22 @@ export default class FuseRecipe extends Component {
         },
     };
 
+    handleResetClick = () => {
+        this.setState(this.baseState);
+    };
+
     static contextType = fusionContext;
 
     handleSubmit = (e) => {
         e.preventDefault();
+
         const newRecipe = {
             date_created: new Date(),
-            fused_name: e.target['fuse_name'].value,
-            base_cuisine: e.target['base_cuisine'].value,
-            fuse_cuisine: e.target['fuse_cuisine'].value,
-            fuse_ingredients: Array.from(e.target['fuse_ingredients']).map(steps => steps.value).join("\n"),
-            fuse_steps: Array.from(e.target['fuse_steps']).map(ingredients => ingredients.value).join("\n")
+            fused_name: e.target["fuse_name"].value,
+            base_cuisine: e.target["base_cuisine"].value,
+            fuse_cuisine: e.target["fuse_cuisine"].value,
+            fuse_ingredients: Array.from(e.target["fuse_ingredients"]).map(steps => steps.value).join("\n"),
+            fuse_steps: Array.from(e.target["fuse_steps"]).map(ingredients => ingredients.value).join("\n")
         };
 
         fetch(`${config.API_ENDPOINT}/recipes`, {
@@ -67,7 +82,7 @@ export default class FuseRecipe extends Component {
                         cuisine_id={baseRecipe.cuisine_id}/>
 
                     <button type="submit" id="submit-recipe">Save Recipe</button>
-                    <button type="reset" id="start-over">Start Over</button>
+                    <button type="reset" onClick={this.handleResetClick} id="start-over">Start Over</button>
                 </form>
 
             </section>

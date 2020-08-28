@@ -10,6 +10,7 @@ import ViewRecipe from './Components/ViewRecipe/ViewRecipe';
 import FuseRecipe from './Components/FuseRecipe/FuseRecipe';
 import BaseViewer from './Components/BaseViewer/BaseViewer';
 import FusionNav from './Components/FusionNav/FusionNav';
+import ModifyRecipe from './Components/ModifyRecipe/ModifyRecipe';
 import PickStarter from './Components/PickStarter/PickStarter';
 
 class App extends Component {
@@ -101,6 +102,7 @@ class App extends Component {
             <Route path="/starter-recipes" component={PickStarter}/>
             <Route path="/bases/:recipe_id" component={BaseViewer}/>
             <Route path="/fuse/:recipe_id" component={FuseRecipe}/>
+            <Route path="/modify-recipe/:fused_id" component={ModifyRecipe}/>
           </Switch>
         </main>
 
