@@ -46,7 +46,7 @@ export default class ModifyViewer extends Component {
 
                 <div className="Title_Modifier">
                     <h2 id="title-changer">Change Your Recipe Title:</h2>
-                    <input name="fuse_name_mod" defaultValue={fused_name}/>
+                    <input id="fuse_name_mod" name="fuse_name_mod" defaultValue={fused_name}/>
                 </div>
 
                 <div className="Ingredient_Modifier">
@@ -54,14 +54,14 @@ export default class ModifyViewer extends Component {
 
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
 
-                    <ul>
+                    <ul id="mod-ingredients-list">
                         {fused_ingredients.map((ingredient, i) => {
                             return (
                                 <li key={i}>
                                 <input 
                                     key={i}
                                     type="text" 
-                                    id={`mod_ingredients ${i}`}
+                                    id="mod_ingredients"
                                     name="mod_ingredients"
                                     defaultValue={ingredient}/>
                                 </li>
@@ -76,13 +76,13 @@ export default class ModifyViewer extends Component {
 
                     <p id="step-instructor">Change or modify the recipe's steps:</p>
 
-                    <ol>
+                    <ol id="mod-steps-list">
                         {fused_steps.map((step, i) => {
                             return (
                                 <li key={i}>
                                     <textarea 
                                         key={i}
-                                        id={`mod_steps ${i}`}
+                                        id="mod_steps"
                                         name="mod_steps"
                                         rows="10" 
                                         defaultValue={step}/>

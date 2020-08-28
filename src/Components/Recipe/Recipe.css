@@ -5,18 +5,21 @@
 .Recipe_Expand {
     text-align: center;
     border: 1px solid black;
-    margin: 2.5em;
+    margin: 1.5em;
 }
 
 #ingredients-list {
-    padding-left: 1em;
-    margin: 1em;
+    padding-left: 0em;
+    margin: .5em;
 }
 
 #steps-list {
-    padding-left: 1em;
-    margin-right: .5em;
-    margin: .5em;
+    text-align: left;
+    margin: 1em;
+}
+
+#display-steps {
+    padding-left: .75em;
 }
 
 #modify-recipe, #delete-recipe, #modify-recipe2, #delete-recipe2 {

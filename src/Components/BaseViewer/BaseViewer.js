@@ -32,8 +32,8 @@ export default class BaseView extends Component {
                     steps={baseRecipe.steps}
                 />
                 
-            <button type="button" onClick={e => this.props.history.push(`/fuse/${recipe_id}`)}>Fuse Recipe</button>
-            <button type="button" onClick={this.handleCancelClick}>Pick Another Recipe</button>
+            <button type="button" id="choose-recipe" onClick={e => this.props.history.push(`/fuse/${recipe_id}`)}>Fuse Recipe</button>
+            <button type="button" id="pick-another" onClick={this.handleCancelClick}>Pick Another Recipe</button>
 
             </section>
         );

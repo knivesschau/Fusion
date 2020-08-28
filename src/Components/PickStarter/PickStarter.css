@@ -1,4 +1,10 @@
 .Starter_Recipes {
+    text-align: center;
     border: 1px solid black;
     margin: 2em;
+}
+
+#starter-recipes {
+    text-align: left;
+    padding-left: 1em;
 }

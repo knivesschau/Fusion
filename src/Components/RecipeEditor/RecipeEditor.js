@@ -31,7 +31,7 @@ export default class RecipeEditor extends Component {
 
                 <div className="Title_Editor">
                     <h2 id="title-instructor">Enter a New Recipe Title:</h2>
-                    <input name="fuse_name" defaultValue={base_name}/>
+                    <input id="name-changer" name="fuse_name" defaultValue={base_name}/>
                 </div>
                 
                 <div className="Fuse_Cuisine">
@@ -58,14 +58,14 @@ export default class RecipeEditor extends Component {
 
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
 
-                    <ul>
+                    <ul id="edit-list-ingredients">
                         {starter_ingredients.map((ingredient, i) => {
                             return (
                                 <li key={i}>
                                 <input 
                                     key={i}
                                     type="text" 
-                                    id={`fuse_ingredients ${i}`}
+                                    id="fuse_ingredients"
                                     name="fuse_ingredients"
                                     defaultValue={ingredient}/>
                                 </li>
@@ -79,13 +79,13 @@ export default class RecipeEditor extends Component {
 
                     <p id="step-instructor">Change or modify the recipe's steps:</p>
 
-                    <ol>
+                    <ol id="edit-list-steps">
                         {starter_steps.map((step, i) => {
                             return (
                                 <li key={i}>
                                     <textarea 
                                         key={i}
-                                        id={`fuse_steps ${i}`}
+                                        id="fuse_steps"
                                         name="fuse_steps"
                                         rows="10" 
                                         defaultValue={step}/>

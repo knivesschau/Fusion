@@ -1,0 +1,10 @@
+.View_Base {
+    text-align: center;
+    border: 1px solid black;
+    margin: 1.5em; 
+}
+
+#choose-recipe, #pick-another {
+    margin: .5em;
+    padding: .25em;
+}

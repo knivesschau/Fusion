@@ -1,0 +1,32 @@
+.Recipe_Editor {
+    margin: 1em;
+}
+
+.Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    padding: .5em;
+}
+
+#fuse-info {
+    font-size: xx-large;
+}
+
+#name-changer {
+    width: 90%;
+}
+
+#fuse_ingredients {
+    margin: .25em;
+    width: 90%;
+}
+
+#edit-list-steps {
+    padding-left: 1em;
+}
+
+#fuse_steps {
+    vertical-align: middle;
+    width: 80%;
+    margin: .25em;
+}

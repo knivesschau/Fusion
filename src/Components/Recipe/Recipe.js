@@ -83,7 +83,7 @@ export default class Recipe extends Component {
                     <div className="Ingredients_Section">
                         <h4 id="ingredients-title"><u>Ingredients</u></h4>
                         
-                        <ul>
+                        <ul id="display-ingredients">
                             {fused_ingredients.map((fuse_ingredients, i) => {
                                 return (
                                     <li id="ingredients-list" key={i}>{fuse_ingredients}</li>
@@ -95,7 +95,7 @@ export default class Recipe extends Component {
                     <div className="Steps_Section">
                         <h4 id="steps-title"><u>Steps</u></h4>
                         
-                        <ol>
+                        <ol id="display-steps">
                             {fused_steps.map((step, i) => {
                                 return (
                                     <li id="steps-list" key={i}>{step}</li>

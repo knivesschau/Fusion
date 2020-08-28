@@ -1,0 +1,28 @@
+#modify-info { 
+    font-size: x-large;
+}
+
+.Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
+    border: 1px solid black;
+    padding: .5em;
+    margin-bottom: 1em;
+}
+
+#fuse_name_mod {
+    width: 90%;
+}
+
+#mod_ingredients {
+    margin: .25em;
+    width: 90%;
+}
+
+#mod-steps-list {
+    padding-left: 1em;
+}
+
+#mod_steps {
+    vertical-align: middle;
+    width: 80%;
+    margin: .25em;
+}

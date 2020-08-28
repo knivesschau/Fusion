@@ -1,0 +1,10 @@
+.Modify_Recipe {
+    text-align: center; 
+    margin: 1em;
+}
+
+#submit-mod, #restart-mod {
+    margin: .5em;
+    padding: .25em;
+    margin-bottom: 2em;
+}

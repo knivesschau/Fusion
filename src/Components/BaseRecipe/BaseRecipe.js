@@ -26,7 +26,7 @@ export default class BaseRecipe extends Component {
                 <div className="Base_Ingredients">
                         <h4 id="base-ingredients"><u>Ingredients</u></h4>
                         
-                        <ul>
+                        <ul id="base-ingredients">
                             {starter_ingredients.map((ingredient, i) => {
                                 return (
                                     <li id="starting-ingredients" key={i}>{ingredient}</li>
@@ -38,7 +38,7 @@ export default class BaseRecipe extends Component {
                     <div className="Steps_Section">
                         <h4 id="steps-title"><u>Steps</u></h4>
                         
-                        <ol>
+                        <ol id="base-steps">
                             {starter_steps.map((step, i) => {
                                 return (
                                     <li id="starting-steps" key={i}>{step}</li>
