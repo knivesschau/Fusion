@@ -56,12 +56,12 @@ export default class Recipe extends Component {
         const {fused_id, fused_name, date_modified, fuse_ingredients, fuse_steps} = this.props;
         
         // convert data into presentable format on client
-        const convertIngredients = Object.values({fuse_ingredients}).toString();
-        const fused_ingredients = convertIngredients.split('\n');
+        const convertIngredients = Object.values({fuse_ingredients}).join();
+        const fused_ingredients = convertIngredients.split("\n");
         
         // convert data into presentable format on client
-        const convertSteps = Object.values({fuse_steps}).toString();
-        const fused_steps = convertSteps.split('\n');
+        const convertSteps = Object.values({fuse_steps}).join();
+        const fused_steps = convertSteps.split("\n");
 
         return (
             <section className="RecipeMain">

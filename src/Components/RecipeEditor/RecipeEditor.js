@@ -4,15 +4,9 @@ import fusionContext from '../../fusionContext';
 import './RecipeEditor.css';
 
 export default class RecipeEditor extends Component {
-    
+   
     static contextType = fusionContext;
 
-    // handleInput(e) {
-    //     this.setState({
-    //         [name]: e.target.value
-    //     });
-    // };
-    
     render() {
 
         const {base_name, cuisine_name, cuisine_id, ingredients, steps} = this.props;

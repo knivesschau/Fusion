@@ -16,23 +16,16 @@ export default class FuseRecipe extends Component {
 
     static contextType = fusionContext;
 
-    handleSubmit = (e, i) => {
+    handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log(e.target);
-        debugger
         const newRecipe = {
             date_created: new Date(),
             fused_name: e.target['fuse_name'].value,
             base_cuisine: e.target['base_cuisine'].value,
             fuse_cuisine: e.target['fuse_cuisine'].value,
-            fuse_ingredients: e.target['fuse_ingredients'].value,
-            fuse_steps: e.target['fuse_steps'].value,
+            fuse_ingredients: Array.from(e.target['fuse_ingredients']).map(steps => steps.value).join("\n"),
+            fuse_steps: Array.from(e.target['fuse_steps']).map(ingredients => ingredients.value).join("\n")
         };
-
-        console.log(newRecipe);
-
-        debugger 
 
         fetch(`${config.API_ENDPOINT}/recipes`, {
             method: 'POST',

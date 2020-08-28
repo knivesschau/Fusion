@@ -9,8 +9,6 @@ export default class LandingPage extends Component {
                 <header role="banner">
                     <h1 id="app-title">Fusion</h1>
                     <h2 id="title-tag">Let Your Inner Chef Out!</h2>
-                    <h3>Note: This version is static and its main purpose is to gather feedback about the basic design, flow and concept. 
-                        At this time, some buttons and links will not be fully interactive.</h3>
                 </header>
 
                 <div className="Intro_Tagline">
@@ -43,5 +41,5 @@ export default class LandingPage extends Component {
 
             </section>
         );
-    }
-}
+    };
+};
