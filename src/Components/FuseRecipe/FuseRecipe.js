@@ -26,6 +26,7 @@ export default class FuseRecipe extends Component {
 
     handleResetClick = () => {
         this.setState(this.baseState);
+        window.alert("Recipe reset! All steps and ingredients have been reset to their original instructions.")
     };
 
     static contextType = fusionContext;

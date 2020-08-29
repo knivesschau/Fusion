@@ -3,8 +3,6 @@ import config from './config';
 import fusionContext from './fusionContext';
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
-import LoginPage from './Components/LoginPage/LoginPage';
-import RegistrationPage from './Components/RegistrationPage/RegistrationPage';
 import ViewCookbook from './Components/ViewCookbook/ViewCookbook';
 import ViewRecipe from './Components/ViewRecipe/ViewRecipe';
 import FuseRecipe from './Components/FuseRecipe/FuseRecipe';
@@ -95,8 +93,6 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={LandingPage}/>
-            <Route path="/login" component={LoginPage}/>
-            <Route path="/register" component={RegistrationPage}/>
             <Route path="/your-cookbook" component={ViewCookbook}/>
             <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
             <Route path="/starter-recipes" component={PickStarter}/>
