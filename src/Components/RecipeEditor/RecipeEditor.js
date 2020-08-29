@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import AddIngredients from '../AddIngredients/AddIngredients';
+import AddSteps from '../AddSteps/AddSteps';
 import fusionContext from '../../fusionContext';
 import './RecipeEditor.css';
 
 export default class RecipeEditor extends Component {
-   
+
     static contextType = fusionContext;
 
     render() {
@@ -71,6 +73,8 @@ export default class RecipeEditor extends Component {
                                 </li>
                             );
                         })}
+
+                        <AddIngredients/>
                     </ul>
                 </div>
 
@@ -92,6 +96,8 @@ export default class RecipeEditor extends Component {
                                 </li>
                             );
                         })}
+
+                        <AddSteps/>
                     </ol>
                 </div>
 

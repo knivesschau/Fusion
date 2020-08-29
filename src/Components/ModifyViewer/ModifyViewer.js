@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import fusionContext from '../../fusionContext';
+import AddModIngredients from '../AddModIngredients/AddModIngredients';
+import AddModSteps from '../AddModSteps/AddModSteps';
 import './ModifyViewer.css';
 
 export default class ModifyViewer extends Component {
@@ -67,6 +69,8 @@ export default class ModifyViewer extends Component {
                                 </li>
                             );
                         })}
+
+                        <AddModIngredients/>
                     </ul>
 
                 </div>
@@ -89,6 +93,8 @@ export default class ModifyViewer extends Component {
                                 </li>
                             );
                         })}
+
+                        <AddModSteps/>
                     </ol>
 
                 </div>
