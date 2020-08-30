@@ -1,10 +1,142 @@
 import React, { Component } from 'react';
 import fusionContext from '../../fusionContext';
+import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
 import './ModifyViewer.css';
 
 export default class ModifyViewer extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            recipe_name: {
+                value: '',
+            },
+            ingredient_edits: {
+                value: '',
+            },
+            steps_edits: {
+                value: '',
+            },
+            nameEdit: false,
+            ingredientsEdit: false,
+            stepsEdit: false,
+            validEdits: false, 
+            errorType: {}
+        };
+    };
 
     static contextType = fusionContext; 
+
+    // validate entire modification form for recipe. throw error if any of the checks are false
+    validateModificationForm() {
+        const {nameEdit, ingredientsEdit, stepsEdit} = this.state; 
+
+        this.setState({
+            validEdits: nameEdit && ingredientsEdit && stepsEdit
+        });
+    };
+
+    // capture recipe name changes
+    editRecipeName(recipe_name) {
+        this.setState({
+            recipe_name: {
+                value: recipe_name,
+            }
+        },
+            this.validateRecipeName
+        );
+    };
+
+    // capture ingredient changes 
+    editIngredients(ingredients) {
+        this.setState({
+            ingredient_edits: {
+                value: ingredients
+            }
+        },
+            this.validateIngredients
+        );
+    };
+
+    // capture step changes 
+    editSteps(steps) {
+        this.setState({
+            step_edits: {
+                value: steps
+            }
+        },
+            this.validateSteps
+        );
+    };
+
+    // validate changes to the recipe name
+    validateRecipeName() {
+        let recipeName = this.state.recipe_name.value.trim();
+        let nameEdit = true; 
+        let errorType = {...this.state.errorType};
+
+        if (recipeName.length === 0) {
+            nameEdit = false;
+            errorType.recipe_name = "Please edit the original recipe name, or type in another name.";
+        }
+
+        else if (recipeName.length >= 1) {
+            errorType.recipe_name = null;
+        }
+
+        this.setState({
+            nameEdit,
+            errorType
+        },
+            this.validateModificationForm
+        );
+    };
+
+    // validate changes to the ingredients
+    validateIngredients() {
+        let ingredient = this.state.ingredient_edits.value.trim();
+        let ingredientsEdit = true; 
+        let errorType = {...this.state.errorType};
+
+        if (ingredient.length === 0) {
+            ingredientsEdit = false; 
+            errorType.ingredient_edits = "Missing ingredient detected: please ensure all ingredients are filled or modified before submitting.";
+        }
+
+        else if (ingredient.length >= 1) {
+            errorType.ingredient_edits = null;
+        }
+
+        this.setState({
+            ingredientsEdit,
+            errorType
+        },
+            this.validateModificationForm
+        );
+    };
+
+    // validate changes to the steps
+    validateSteps() {
+        let step = this.state.step_edits.value.trim(); 
+        let stepsEdit = true;
+        let errorType = {...this.state.errorType};
+
+        if (step.length === 0) {
+            stepsEdit = false; 
+            errorType.step_edits = "Missing step detected: please ensure all steps are filled or modified before submitting.";
+        }
+
+        else if (step.length >= 1) {
+            errorType.step_edits = null;
+        }
+
+        this.setState({
+            stepsEdit,
+            errorType
+        },
+            this.validateModificationForm
+        );
+    };
 
     renderCuisines() {
         const {fuse_cuisine, base_cuisine} = this.props;
@@ -46,7 +178,15 @@ export default class ModifyViewer extends Component {
 
                 <div className="Title_Modifier">
                     <h2 id="title-changer">Change Your Recipe Title:</h2>
-                    <input id="fuse_name_mod" name="fuse_name_mod" defaultValue={fused_name}/>
+                    <input 
+                        id="fuse_name_mod" 
+                        name="fuse_name_mod" 
+                        defaultValue={fused_name}
+                        onChange={e => this.editRecipeName(e.target.value)}/>
+
+                    <ErrorValidation
+                        value={this.state.validName}
+                        message={this.state.errorType.recipe_name}/>
                 </div>
 
                 <div className="Ingredient_Modifier">
@@ -58,16 +198,24 @@ export default class ModifyViewer extends Component {
                         {fused_ingredients.map((ingredient, i) => {
                             return (
                                 <li key={i}>
+                                
                                 <input 
                                     key={i}
                                     type="text" 
                                     id="mod_ingredients"
                                     name="mod_ingredients"
-                                    defaultValue={ingredient}/>
+                                    defaultValue={ingredient}
+                                    onChange={e => this.editIngredients(e.currentTarget.value)}/>
+        
                                 </li>
                             );
                         })}
+
                     </ul>
+
+                    <ErrorValidation
+                        value={this.state.validIngredients}
+                        message={this.state.errorType.ingredient_edits}/>
 
                 </div>
 
@@ -80,16 +228,24 @@ export default class ModifyViewer extends Component {
                         {fused_steps.map((step, i) => {
                             return (
                                 <li key={i}>
+                                    
                                     <textarea 
                                         key={i}
                                         id="mod_steps"
                                         name="mod_steps"
                                         rows="10" 
-                                        defaultValue={step}/>
+                                        defaultValue={step}
+                                        onChange={e => this.editSteps(e.currentTarget.value)}/>
+
                                 </li>
                             );
                         })}
+
                     </ol>
+
+                    <ErrorValidation
+                        value={this.state.validSteps}
+                        message={this.state.errorType.step_edits}/>
 
                 </div>
 

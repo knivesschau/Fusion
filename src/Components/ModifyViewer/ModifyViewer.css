@@ -8,6 +8,10 @@
     margin-bottom: 1em;
 }
 
+.Mod_Error {
+    color: red;
+}
+
 #fuse_name_mod {
     width: 90%;
 }
