@@ -8,9 +8,15 @@ export default class ModifyViewer extends Component {
         super(props);
 
         this.state = {
-            recipe_name: '',
-            ingredient_edits: '',
-            steps_edits: '',
+            recipe_name: {
+                value: '',
+            },
+            ingredient_edits: {
+                value: '',
+            },
+            steps_edits: {
+                value: '',
+            },
             nameEdit: false,
             ingredientsEdit: false,
             stepsEdit: false,
@@ -33,7 +39,9 @@ export default class ModifyViewer extends Component {
     // capture recipe name changes
     editRecipeName(recipe_name) {
         this.setState({
-            recipe_name: recipe_name
+            recipe_name: {
+                value: recipe_name,
+            }
         },
             this.validateRecipeName
         );
@@ -42,7 +50,9 @@ export default class ModifyViewer extends Component {
     // capture ingredient changes 
     editIngredients(ingredients) {
         this.setState({
-            ingredient_edits: ingredients
+            ingredient_edits: {
+                value: ingredients
+            }
         },
             this.validateIngredients
         );
@@ -51,23 +61,27 @@ export default class ModifyViewer extends Component {
     // capture step changes 
     editSteps(steps) {
         this.setState({
-            step_edits: steps
+            step_edits: {
+                value: steps
+            }
         },
             this.validateSteps
         );
-
-        console.log(this.state.step_edits)
     };
 
     // validate changes to the recipe name.
     validateRecipeName() {
-        const {recipe_name} = this.state; 
+        let recipeName = this.state.recipe_name.value.trim();
         let nameEdit = true; 
         let errorType = {...this.state.errorType};
 
-        if (recipe_name.length === 0) {
-            nameEdit = false; 
+        if (recipeName.length === 0) {
+            nameEdit = false;
             errorType.recipe_name = "Please edit the original recipe name, or type in another response.";
+        }
+
+        else if (recipeName.length >= 1) {
+            errorType.recipe_name = null;
         }
 
         this.setState({
@@ -80,13 +94,17 @@ export default class ModifyViewer extends Component {
 
     // validate changes to the ingredients.
     validateIngredients() {
-        const {ingredient_edits} = this.state; 
+        let ingredient = this.state.ingredient_edits.value.trim();
         let ingredientsEdit = true; 
         let errorType = {...this.state.errorType};
 
-        if (ingredient_edits.length === 0) {
+        if (ingredient.length === 0) {
             ingredientsEdit = false; 
-            errorType.ingredient_edits = "Missing ingredient detected: please enter an ingredient or modify an existing one";
+            errorType.ingredient_edits = "Missing ingredient detected: please ensure all ingredients are filled or modified before submitting.";
+        }
+
+        else if (ingredient.length >= 1) {
+            errorType.ingredient_edits = null;
         }
 
         this.setState({
@@ -99,13 +117,17 @@ export default class ModifyViewer extends Component {
 
     // validate changes to the ingredients.
     validateSteps() {
-        const {step_edits} = this.state; 
+        let step = this.state.step_edits.value.trim(); 
         let stepsEdit = true;
         let errorType = {...this.state.errorType};
 
-        if (step_edits.length === 0) {
+        if (step.length === 0) {
             stepsEdit = false; 
-            errorType.step_edits = "Missing step detected: please enter in a step, or modify an existing one before submitting.";
+            errorType.step_edits = "Missing step detected: please ensure all steps are filled or modified before submitting.";
+        }
+
+        else if (step.length >= 1) {
+            errorType.step_edits = null;
         }
 
         this.setState({
@@ -188,11 +210,12 @@ export default class ModifyViewer extends Component {
                                 </li>
                             );
                         })}
+
                     </ul>
 
                     <ErrorValidation
-                            value={this.state.validIngredients}
-                            message={this.state.errorType.ingredient_edits}/>
+                        value={this.state.validIngredients}
+                        message={this.state.errorType.ingredient_edits}/>
 
                 </div>
 
@@ -216,7 +239,6 @@ export default class ModifyViewer extends Component {
 
                                 </li>
                             );
-                            
                         })}
 
                     </ol>
