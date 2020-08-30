@@ -37,8 +37,8 @@ export default class ModifyRecipe extends Component {
         const modifyRecipe = {
             date_modified: new Date(),
             fused_name: e.target["fuse_name_mod"].value,
-            fuse_ingredients: Array.from(e.target["mod_ingredients"]).map(steps => steps.value).join("\n"),
-            fuse_steps: Array.from(e.target["mod_steps"]).map(ingredients => ingredients.value).join("\n")
+            fuse_ingredients: Array.from(e.target["mod_ingredients"]).map(ingredient => ingredient.value).join("\n"),
+            fuse_steps: Array.from(e.target["mod_steps"]).map(step => step.value).join("\n")
         };
 
         fetch(`${config.API_ENDPOINT}/recipes/${fuseId}`, {

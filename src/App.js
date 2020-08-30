@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from './config';
 import fusionContext from './fusionContext';
 import { Route, Switch } from 'react-router-dom';
+import ErrorHandler from './ErrorHandlers/ErrorHandler';
 import LandingPage from './Components/LandingPage/LandingPage';
 import ViewCookbook from './Components/ViewCookbook/ViewCookbook';
 import ViewRecipe from './Components/ViewRecipe/ViewRecipe';
@@ -83,26 +84,30 @@ class App extends Component {
     };
 
     return (
-      <fusionContext.Provider value={recipeValues}>
-        
-        <main className='App'>
+      <ErrorHandler>
+      
+        <fusionContext.Provider value={recipeValues}>
+            
+            <main className='App'>
 
-          <nav role="navigation" className="Main_Nav">
-            <FusionNav/>
-          </nav>
+              <nav role="navigation" className="Main_Nav">
+                <FusionNav/>
+              </nav>
 
-          <Switch>
-            <Route exact path="/" component={LandingPage}/>
-            <Route path="/your-cookbook" component={ViewCookbook}/>
-            <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
-            <Route path="/starter-recipes" component={PickStarter}/>
-            <Route path="/bases/:recipe_id" component={BaseViewer}/>
-            <Route path="/fuse/:recipe_id" component={FuseRecipe}/>
-            <Route path="/modify-recipe/:fused_id" component={ModifyRecipe}/>
-          </Switch>
-        </main>
+              <Switch>
+                <Route exact path="/" component={LandingPage}/>
+                <Route path="/your-cookbook" component={ViewCookbook}/>
+                <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
+                <Route path="/starter-recipes" component={PickStarter}/>
+                <Route path="/bases/:recipe_id" component={BaseViewer}/>
+                <Route path="/fuse/:recipe_id" component={FuseRecipe}/>
+                <Route path="/modify-recipe/:fused_id" component={ModifyRecipe}/>
+              </Switch>
+            </main>
 
-      </fusionContext.Provider>
+        </fusionContext.Provider>
+
+      </ErrorHandler>
     );
   };
 };
