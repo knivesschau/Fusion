@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import config from './config';
 import fusionContext from './fusionContext';
 import { Route, Switch } from 'react-router-dom';
+import ErrorHandler from './ErrorHandlers/ErrorHandler';
 import LandingPage from './Components/LandingPage/LandingPage';
-import LoginPage from './Components/LoginPage/LoginPage';
-import RegistrationPage from './Components/RegistrationPage/RegistrationPage';
 import ViewCookbook from './Components/ViewCookbook/ViewCookbook';
 import ViewRecipe from './Components/ViewRecipe/ViewRecipe';
 import FuseRecipe from './Components/FuseRecipe/FuseRecipe';
@@ -20,10 +19,10 @@ class App extends Component {
     cuisines: []
   };
 
-  // on app initialization, grab all data from API. 
+  // on app initialization, grab all data from API
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/recipes`), // user made/created fusion recipes, dynamic data. 
+      fetch(`${config.API_ENDPOINT}/recipes`), // user made/created fusion recipes, dynamic data
       fetch(`${config.API_ENDPOINT}/bases`), // static data for starting base recipes 
       fetch(`${config.API_ENDPOINT}/cuisines`) // static data for cuisine styles 
     ])
@@ -85,28 +84,30 @@ class App extends Component {
     };
 
     return (
-      <fusionContext.Provider value={recipeValues}>
-        
-        <main className='App'>
+      <ErrorHandler>
+      
+        <fusionContext.Provider value={recipeValues}>
+            
+            <main className='App'>
 
-          <nav role="navigation" className="Main_Nav">
-            <FusionNav/>
-          </nav>
+              <nav role="navigation" className="Main_Nav">
+                <FusionNav/>
+              </nav>
 
-          <Switch>
-            <Route exact path="/" component={LandingPage}/>
-            <Route path="/login" component={LoginPage}/>
-            <Route path="/register" component={RegistrationPage}/>
-            <Route path="/your-cookbook" component={ViewCookbook}/>
-            <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
-            <Route path="/starter-recipes" component={PickStarter}/>
-            <Route path="/bases/:recipe_id" component={BaseViewer}/>
-            <Route path="/fuse/:recipe_id" component={FuseRecipe}/>
-            <Route path="/modify-recipe/:fused_id" component={ModifyRecipe}/>
-          </Switch>
-        </main>
+              <Switch>
+                <Route exact path="/" component={LandingPage}/>
+                <Route path="/your-cookbook" component={ViewCookbook}/>
+                <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
+                <Route path="/starter-recipes" component={PickStarter}/>
+                <Route path="/bases/:recipe_id" component={BaseViewer}/>
+                <Route path="/fuse/:recipe_id" component={FuseRecipe}/>
+                <Route path="/modify-recipe/:fused_id" component={ModifyRecipe}/>
+              </Switch>
+            </main>
 
-      </fusionContext.Provider>
+        </fusionContext.Provider>
+
+      </ErrorHandler>
     );
   };
 };

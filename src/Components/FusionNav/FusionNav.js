@@ -10,14 +10,6 @@ export default class FusionNav extends Component {
                     Home
                 </Link>
 
-                <Link to="/register">
-                    Sign Up
-                </Link>
-
-                <Link to="/login">
-                    Login
-                </Link>
-
                 <Link to="/your-cookbook">
                     Cookbook
                 </Link>
