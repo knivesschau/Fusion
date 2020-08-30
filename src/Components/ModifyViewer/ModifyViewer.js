@@ -27,7 +27,7 @@ export default class ModifyViewer extends Component {
 
     static contextType = fusionContext; 
 
-    // validate entire modification form for recipe. throw error if any of the checks are false. 
+    // validate entire modification form for recipe. throw error if any of the checks are false
     validateModificationForm() {
         const {nameEdit, ingredientsEdit, stepsEdit} = this.state; 
 
@@ -69,7 +69,7 @@ export default class ModifyViewer extends Component {
         );
     };
 
-    // validate changes to the recipe name.
+    // validate changes to the recipe name
     validateRecipeName() {
         let recipeName = this.state.recipe_name.value.trim();
         let nameEdit = true; 
@@ -77,7 +77,7 @@ export default class ModifyViewer extends Component {
 
         if (recipeName.length === 0) {
             nameEdit = false;
-            errorType.recipe_name = "Please edit the original recipe name, or type in another response.";
+            errorType.recipe_name = "Please edit the original recipe name, or type in another name.";
         }
 
         else if (recipeName.length >= 1) {
@@ -92,7 +92,7 @@ export default class ModifyViewer extends Component {
         );
     };
 
-    // validate changes to the ingredients.
+    // validate changes to the ingredients
     validateIngredients() {
         let ingredient = this.state.ingredient_edits.value.trim();
         let ingredientsEdit = true; 
@@ -115,7 +115,7 @@ export default class ModifyViewer extends Component {
         );
     };
 
-    // validate changes to the ingredients.
+    // validate changes to the steps
     validateSteps() {
         let step = this.state.step_edits.value.trim(); 
         let stepsEdit = true;

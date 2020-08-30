@@ -19,10 +19,10 @@ class App extends Component {
     cuisines: []
   };
 
-  // on app initialization, grab all data from API. 
+  // on app initialization, grab all data from API
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/recipes`), // user made/created fusion recipes, dynamic data. 
+      fetch(`${config.API_ENDPOINT}/recipes`), // user made/created fusion recipes, dynamic data
       fetch(`${config.API_ENDPOINT}/bases`), // static data for starting base recipes 
       fetch(`${config.API_ENDPOINT}/cuisines`) // static data for cuisine styles 
     ])
