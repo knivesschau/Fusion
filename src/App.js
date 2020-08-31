@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import config from './config';
 import fusionContext from './fusionContext';
 import { Route, Switch } from 'react-router-dom';
+import TokenService from './services/token-services';
 import ErrorHandler from './ErrorHandlers/ErrorHandler';
 import LandingPage from './Components/LandingPage/LandingPage';
 import ViewCookbook from './Components/ViewCookbook/ViewCookbook';
 import ViewRecipe from './Components/ViewRecipe/ViewRecipe';
 import FuseRecipe from './Components/FuseRecipe/FuseRecipe';
 import BaseViewer from './Components/BaseViewer/BaseViewer';
+import LoginPage from './Components/LoginPage/LoginPage';
+import RegistrationPage from './Components/RegistrationPage/RegistrationPage';
 import FusionNav from './Components/FusionNav/FusionNav';
 import ModifyRecipe from './Components/ModifyRecipe/ModifyRecipe';
 import PickStarter from './Components/PickStarter/PickStarter';
@@ -22,9 +25,26 @@ class App extends Component {
   // on app initialization, grab all data from API
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/recipes`), // user made/created fusion recipes, dynamic data
-      fetch(`${config.API_ENDPOINT}/bases`), // static data for starting base recipes 
-      fetch(`${config.API_ENDPOINT}/cuisines`) // static data for cuisine styles 
+      // user made/created fusion recipes, dynamic data
+      fetch(`${config.API_ENDPOINT}/recipes`, { 
+        headers: {
+          'authorization': `basic ${TokenService.getAuthToken()}`
+        }
+      }),
+
+      // static data for starting base recipes 
+      fetch(`${config.API_ENDPOINT}/bases`, { 
+        headers: {
+          'authorization': `basic ${TokenService.getAuthToken()}`
+        }
+      }),
+
+      // static data for cuisine styles 
+      fetch(`${config.API_ENDPOINT}/cuisines`, { 
+        headers: {
+          'authorization': `basic ${TokenService.getAuthToken()}`
+        }
+      })
     ])
       .then(([res1, res2, res3]) => { 
         if ([!res1, !res2, !res3].ok) {
@@ -96,6 +116,8 @@ class App extends Component {
 
               <Switch>
                 <Route exact path="/" component={LandingPage}/>
+                <Route path="/get-started" component={RegistrationPage}/>
+                <Route path="/login" component={LoginPage}/>
                 <Route path="/your-cookbook" component={ViewCookbook}/>
                 <Route path="/view-recipe/:fused_id" component={ViewRecipe}/>
                 <Route path="/starter-recipes" component={PickStarter}/>

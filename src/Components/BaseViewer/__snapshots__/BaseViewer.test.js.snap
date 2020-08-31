@@ -6,12 +6,14 @@ exports[`BaseViewer Component Renders the complete BaseViewer Component and all 
 >
   <BaseRecipe />
   <button
+    id="choose-recipe"
     onClick={[Function]}
     type="button"
   >
     Fuse Recipe
   </button>
   <button
+    id="pick-another"
     onClick={[Function]}
     type="button"
   >

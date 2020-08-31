@@ -13,12 +13,17 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
     <div
       className="Title_Editor"
     >
-      <h1>
-        Enter A New Recipe Title:
-      </h1>
+      <h2
+        id="title-instructor"
+      >
+        Enter a New Recipe Title:
+      </h2>
       <input
+        id="name-changer"
         name="fuse_name"
+        onChange={[Function]}
       />
+      <ErrorValidation />
     </div>
     <div
       className="Fuse_Cuisine"
@@ -37,13 +42,15 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
         htmlFor="cuisines"
         name="fuse_cuisine"
       >
-        Select your second cuisine:
+        Select your "Fusion" style (or, select "None"):
       </label>
       <select
+        id="fusion_cuisine"
         name="fuse_cuisine"
+        required={true}
       >
         <option
-          key=""
+          value=""
         >
           --Select One--
         </option>
@@ -52,44 +59,72 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
     <div
       className="Edit_Ingredients"
     >
-      <h2>
+      <h2
+        id="ingredient-title"
+      >
         Ingredients
       </h2>
-      <ul>
+      <p
+        id="ingredient-instructor"
+      >
+        Change or modify the recipe's ingredients:
+      </p>
+      <ul
+        id="edit-list-ingredients"
+      >
         <li
           key="0"
         >
           <input
             defaultValue=""
-            id="edit-ingredients"
+            id="fuse_ingredients"
             key="0"
-            name="fuse_steps"
+            name="fuse_ingredients"
             onChange={[Function]}
             type="text"
           />
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
         </li>
+        <AddIngredients />
       </ul>
+      <ErrorValidation />
     </div>
     <div
       className="Edit_Steps"
     >
-      <h2>
+      <h2
+        id="step-title"
+      >
         Steps
       </h2>
-      <ol>
+      <p
+        id="step-instructor"
+      >
+        Change or modify the recipe's steps:
+      </p>
+      <ol
+        id="edit-list-steps"
+      >
         <li
           key="0"
         >
           <textarea
             defaultValue=""
-            id="edit-steps"
+            id="fuse_steps"
             key="0"
-            name="fuse_ingredients"
+            name="fuse_steps"
             onChange={[Function]}
             rows="10"
           />
         </li>
+        <AddSteps />
       </ol>
+      <ErrorValidation />
     </div>
   </section>
 </Fragment>

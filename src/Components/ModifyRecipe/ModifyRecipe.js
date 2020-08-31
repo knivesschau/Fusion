@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config';
 import fusionContext from '../../fusionContext';
 import ModifyViewer from '../ModifyViewer/ModifyViewer';
+import TokenService from '../../services/token-services';
 import './ModifyRecipe.css';
 
 export default class ModifyRecipe extends Component {
@@ -45,7 +46,8 @@ export default class ModifyRecipe extends Component {
             method: "PATCH",
             body: JSON.stringify(modifyRecipe),
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "authorization": `basic ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {

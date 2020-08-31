@@ -1,14 +1,35 @@
 import React, {Component} from 'react';
+import TokenService from '../../services/token-services';
 import './LoginPage.css';
 
 export default class LoginPage extends Component {
+    static defaultProps = {
+        onValidLogin: () => {}
+    };
+
+    handleLoginAuth = e => {
+        e.preventDefault();
+
+        const {return_username, return_password} = e.target;
+
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(return_username.value, return_password.value)
+        );
+
+        return_username.value = '';
+        return_password.value = '';
+        this.props.onValidLogin();
+
+        window.location="/your-cookbook";
+    }
+    
     render() {
         return (
             <section className="Login_Page">
                 
-                <h3>Log In (Will Be Included in Final Version)</h3>
+                <h3>Log In</h3>
 
-                <form className="Login_Form">
+                <form className="Login_Form" onSubmit={this.handleLoginAuth}>
                     
                     <label htmlFor="username">
                         <p id="return-user">Username:</p>

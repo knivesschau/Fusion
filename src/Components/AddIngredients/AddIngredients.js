@@ -8,6 +8,7 @@ export default function AddIngredients() {
         return ingredients.ingredient.map((ingredient, i) => 
             <li id="additional-ingredients" key={i}>
                 <input
+                    required
                     type="text"
                     id="fuse_ingredients"
                     name="fuse_ingredients"

@@ -8,6 +8,7 @@ export default function AddSteps() {
         return steps.step.map((step, i) => 
             <li id="additional-steps" key={i}>
                 <textarea
+                    required
                     rows="10"
                     id="fuse_steps"
                     name="fuse_steps"

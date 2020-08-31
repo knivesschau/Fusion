@@ -5,10 +5,11 @@ exports[`LoginPage Component Renders the complete LoginPage Component and all ne
   className="Login_Page"
 >
   <h3>
-    Log In (Will Be Included in Final Version)
+    Log In
   </h3>
   <form
     className="Login_Form"
+    onSubmit={[Function]}
   >
     <label
       htmlFor="username"

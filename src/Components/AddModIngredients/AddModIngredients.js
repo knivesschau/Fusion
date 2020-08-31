@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import './AddModIngredients.css';
 
 export default function AddModIngredients() {
-    const [modIngredients, setModIngredients] = useState({ ingredient: [] });
+    const [modIngredients, setModIngredients] = useState({ 
+        ingredient: [],
+    });
 
     function createInputs() {
         return modIngredients.ingredient.map((ingredient, i) => 
             <li id="add-mod-ingredients" key={i}>
                 <input
+                    required
                     type="text"
                     id="mod_ingredients"
                     name="mod_ingredients"
                     value={ingredient || ""}
+                    placeholder="Enter new ingredient here"
                     onChange={handleUpdate.bind(i)}/>
 
                 <button type="button" id="remove-mod-ingredient" onClick={removeInput.bind({i})}>Remove</button>
@@ -21,7 +25,7 @@ export default function AddModIngredients() {
     
     function handleUpdate(e) {
         let newIngredients = [...modIngredients.ingredient];
-        newIngredients[this] = e.target.value;
+        newIngredients[this] = e.currentTarget.value;
 
         setModIngredients({
             ingredient: newIngredients

@@ -11,7 +11,7 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
       id="recipe-title"
     />
     <h3
-      id="cuisine-styles"
+      id="cuisine-styles-both"
     >
       , 
     </h3>
@@ -23,7 +23,7 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
        
     </h4>
     <Link
-      to="/edit-recipe/undefined"
+      to="/modify-recipe/undefined"
     >
       <button
         id="modify-recipe"
@@ -49,7 +49,9 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
           Ingredients
         </u>
       </h4>
-      <ul>
+      <ul
+        id="display-ingredients"
+      >
         <li
           id="ingredients-list"
           key="0"
@@ -66,7 +68,9 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
           Steps
         </u>
       </h4>
-      <ol>
+      <ol
+        id="display-steps"
+      >
         <li
           id="steps-list"
           key="0"

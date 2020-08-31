@@ -27,7 +27,9 @@ exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all 
           Ingredients
         </u>
       </h4>
-      <ul>
+      <ul
+        id="base-ingredients"
+      >
         <li
           id="starting-ingredients"
           key="0"
@@ -44,7 +46,9 @@ exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all 
           Steps
         </u>
       </h4>
-      <ol>
+      <ol
+        id="base-steps"
+      >
         <li
           id="starting-steps"
           key="0"

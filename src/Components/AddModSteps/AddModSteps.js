@@ -8,6 +8,7 @@ export default function AddModSteps() {
         return modSteps.step.map((step, i) => 
             <li id="add-mod-steps" key={i}>
                 <textarea
+                    required
                     rows="10"
                     id="mod_steps"
                     name="mod_steps"
@@ -46,7 +47,7 @@ export default function AddModSteps() {
     return (
         <>
         {createInputs()}
-        <button type="button" id="add-mod-stept" onClick={addInput}>Add Ingredient</button>
+        <button type="button" id="add-mod-stept" onClick={addInput}>Add Step</button>
         </>
     );
 };

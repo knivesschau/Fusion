@@ -19,9 +19,9 @@ export default class RecipeEditor extends Component {
             step_changes: {
                 value: '',
             },
-            changeName: false,
-            ingredientChanges: false,
-            stepChanges: false,
+            changedName: false,
+            ingredientChanged: false,
+            stepChanged: false,
             validChanges: false, 
             errorType: {}
         };
@@ -31,10 +31,10 @@ export default class RecipeEditor extends Component {
 
     // validate entire recipe form as user changes it to their liking. throw error if any of the checks are false. 
     validateRecipeForm() {
-        const {changeName, ingredientChanges, stepChanges} = this.state; 
+        const {changedName, ingredientChanged, stepChanged} = this.state; 
 
         this.setState({
-            validChanges: changeName && ingredientChanges && stepChanges
+            validChanges: changedName && ingredientChanged && stepChanged
         });
     };
 
@@ -58,6 +58,8 @@ export default class RecipeEditor extends Component {
         },
             this.validateIngredients
         );
+
+        console.log(this.state.ingredient_changes.value);
     };
 
     // capture step changes 
@@ -74,11 +76,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the recipe name
     validateRecipeName() {
         let recipeName = this.state.recipe_name.value.trim();
-        let changeName = true; 
+        let changedName = true; 
         let errorType = {...this.state.errorType};
 
         if (recipeName.length === 0) {
-            changeName = false;
+            changedName = false;
             errorType.recipe_name = "Please edit the original recipe name, or type in another name.";
         }
 
@@ -87,7 +89,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            changeName,
+            changedName,
             errorType
         },
             this.validateRecipeForm
@@ -97,11 +99,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the ingredients
     validateIngredients() {
         let ingredient = this.state.ingredient_changes.value.trim();
-        let ingredientChanges = true; 
+        let ingredientChanged = true; 
         let errorType = {...this.state.errorType};
 
         if (ingredient.length === 0) {
-            ingredientChanges = false; 
+            ingredientChanged = false; 
             errorType.ingredient_changes = "Missing ingredient detected: please ensure all ingredients are filled or modified before submitting.";
         }
 
@@ -110,7 +112,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            ingredientChanges,
+            ingredientChanged,
             errorType
         },
             this.validateRecipeForm
@@ -120,11 +122,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the steps
     validateSteps() {
         let step = this.state.step_changes.value.trim(); 
-        let stepChanges = true;
+        let stepChanged = true;
         let errorType = {...this.state.errorType};
 
         if (step.length === 0) {
-            stepChanges = false; 
+            stepChanged = false; 
             errorType.step_changes = "Missing step detected: please ensure all steps are filled or modified before submitting.";
         }
 
@@ -133,7 +135,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            stepChanges,
+            stepChanged,
             errorType
         },
             this.validateRecipeForm
@@ -153,10 +155,29 @@ export default class RecipeEditor extends Component {
         const convertSteps = Object.values({steps}).toString();
         let starter_steps = convertSteps.split('\n');
         starter_steps = starter_steps.map(step => step.trim());
+        
+        // function to remove ingredients(?)
+        // const removeIngredient = () => {
+        //     let ingredientCheck = this.state.ingredient_changes.value.trim(); 
+        //     let ingredientFilter = starter_ingredients.filter((ingredient) => ingredient !== ingredientCheck);
+        //     ingredientCheck = ''
+
+        //     this.setState({
+        //         ingredient_changes: {
+        //             value: ''
+        //         }
+        //     });
+
+        //     console.log(ingredientFilter)
+        //     console.log("deleted!")
+
+        //     return (
+        //         <input type="hidden" value={ingredientCheck}/>
+        //     );
+        // }
 
         //get static cuisine data 
         const {cuisines=[]} = this.context;
-
 
         return (
             <>
@@ -213,7 +234,7 @@ export default class RecipeEditor extends Component {
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
 
                     <ul id="edit-list-ingredients">
-                        {starter_ingredients.map((ingredient, i) => {                            
+                        {starter_ingredients.map((ingredient, i) => {                           
                             return (
                                 <li key={i}>
                                 <input 
@@ -223,6 +244,8 @@ export default class RecipeEditor extends Component {
                                     name="fuse_ingredients"
                                     defaultValue={ingredient}
                                     onChange={e => this.updateIngredients(e.currentTarget.value)}/>
+                                
+                                {/* <button type="button" onClick={removeIngredient.bind({i})}>Remove</button> */}
                                 </li>
                             );
                         })}

@@ -1,4 +1,4 @@
-.Fusion_Nav {
+.Guest_Nav, .User_Nav {
     background-color: #aaa;
     border: 1px solid black;
     display: flex; 

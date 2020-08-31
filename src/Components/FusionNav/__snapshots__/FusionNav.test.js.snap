@@ -4,30 +4,24 @@ exports[`FusionNav Component Renders the complete FusionNav Component and all ne
 <div
   className="Fusion_Nav"
 >
-  <Link
-    to="/"
+  <div
+    className="Guest_Nav"
   >
-    Home
-  </Link>
-  <Link
-    to="/register"
-  >
-    Sign Up
-  </Link>
-  <Link
-    to="/login"
-  >
-    Login
-  </Link>
-  <Link
-    to="/your-cookbook"
-  >
-    Cookbook
-  </Link>
-  <Link
-    to="/starter-recipes"
-  >
-    Fuse
-  </Link>
+    <Link
+      to="/"
+    >
+      About
+    </Link>
+    <Link
+      to="/get-started"
+    >
+      Register
+    </Link>
+    <Link
+      to="/login"
+    >
+      Log In
+    </Link>
+  </div>
 </div>
 `;
