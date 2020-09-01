@@ -187,7 +187,6 @@ export default class ModifyViewer extends Component {
                         onChange={e => this.editRecipeName(e.target.value)}/>
 
                     <ErrorValidation
-                        value={this.state.validName}
                         message={this.state.errorType.recipe_name}/>
                 </div>
 
@@ -215,7 +214,6 @@ export default class ModifyViewer extends Component {
                     </ul>
 
                     <ErrorValidation
-                        value={this.state.validIngredients}
                         message={this.state.errorType.ingredient_edits}/>
 
                 </div>
@@ -244,7 +242,6 @@ export default class ModifyViewer extends Component {
                     </ol>
 
                     <ErrorValidation
-                        value={this.state.validSteps}
                         message={this.state.errorType.step_edits}/>
 
                 </div>

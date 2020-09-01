@@ -173,7 +173,6 @@ export default class RecipeEditor extends Component {
                         onChange={e => this.updateRecipeName(e.target.value)}/>
                     
                     <ErrorValidation
-                        value={this.state.validName}
                         message={this.state.errorType.recipe_name}/>
                 </div>
                 
@@ -232,8 +231,7 @@ export default class RecipeEditor extends Component {
                     </ul>
                     
                     <ErrorValidation
-                            value={this.state.validIngredients}
-                            message={this.state.errorType.ingredient_changes}/>
+                        message={this.state.errorType.ingredient_changes}/>
 
                 </div>
 
@@ -261,7 +259,6 @@ export default class RecipeEditor extends Component {
                     </ol>
 
                     <ErrorValidation
-                        value={this.state.validSteps}
                         message={this.state.errorType.step_changes}/>
 
                 </div>
