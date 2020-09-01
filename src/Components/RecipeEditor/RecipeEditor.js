@@ -155,26 +155,6 @@ export default class RecipeEditor extends Component {
         const convertSteps = Object.values({steps}).toString();
         let starter_steps = convertSteps.split('\n');
         starter_steps = starter_steps.map(step => step.trim());
-        
-        // function to remove ingredients(?)
-        // const removeIngredient = () => {
-        //     let ingredientCheck = this.state.ingredient_changes.value.trim(); 
-        //     let ingredientFilter = starter_ingredients.filter((ingredient) => ingredient !== ingredientCheck);
-        //     ingredientCheck = ''
-
-        //     this.setState({
-        //         ingredient_changes: {
-        //             value: ''
-        //         }
-        //     });
-
-        //     console.log(ingredientFilter)
-        //     console.log("deleted!")
-
-        //     return (
-        //         <input type="hidden" value={ingredientCheck}/>
-        //     );
-        // }
 
         //get static cuisine data 
         const {cuisines=[]} = this.context;
@@ -244,8 +224,6 @@ export default class RecipeEditor extends Component {
                                     name="fuse_ingredients"
                                     defaultValue={ingredient}
                                     onChange={e => this.updateIngredients(e.currentTarget.value)}/>
-                                
-                                {/* <button type="button" onClick={removeIngredient.bind({i})}>Remove</button> */}
                                 </li>
                             );
                         })}

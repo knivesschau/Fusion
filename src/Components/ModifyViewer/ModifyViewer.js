@@ -19,9 +19,9 @@ export default class ModifyViewer extends Component {
             steps_edits: {
                 value: '',
             },
-            nameEdit: false,
-            ingredientsEdit: false,
-            stepsEdit: false,
+            nameEdited: false,
+            ingredientsEdited: false,
+            stepsEdited: false,
             validEdits: false, 
             errorType: {}
         };
@@ -31,10 +31,10 @@ export default class ModifyViewer extends Component {
 
     // validate entire modification form for recipe. throw error if any of the checks are false
     validateModificationForm() {
-        const {nameEdit, ingredientsEdit, stepsEdit} = this.state; 
+        const {nameEdited, ingredientsEdited, stepsEdited} = this.state; 
 
         this.setState({
-            validEdits: nameEdit && ingredientsEdit && stepsEdit
+            validEdits: nameEdited && ingredientsEdited && stepsEdited
         });
     };
 
@@ -74,11 +74,11 @@ export default class ModifyViewer extends Component {
     // validate changes to the recipe name
     validateRecipeName() {
         let recipeName = this.state.recipe_name.value.trim();
-        let nameEdit = true; 
+        let nameEdited = true; 
         let errorType = {...this.state.errorType};
 
         if (recipeName.length === 0) {
-            nameEdit = false;
+            nameEdited = false;
             errorType.recipe_name = "Please edit the original recipe name, or type in another name.";
         }
 
@@ -87,7 +87,7 @@ export default class ModifyViewer extends Component {
         }
 
         this.setState({
-            nameEdit,
+            nameEdited,
             errorType
         },
             this.validateModificationForm
@@ -97,11 +97,11 @@ export default class ModifyViewer extends Component {
     // validate changes to the ingredients
     validateIngredients() {
         let ingredient = this.state.ingredient_edits.value.trim();
-        let ingredientsEdit = true; 
+        let ingredientsEdited = true; 
         let errorType = {...this.state.errorType};
 
         if (ingredient.length === 0) {
-            ingredientsEdit = false; 
+            ingredientsEdited = false; 
             errorType.ingredient_edits = "Missing ingredient detected: please ensure all ingredients are filled or modified before submitting.";
         }
 
@@ -110,7 +110,7 @@ export default class ModifyViewer extends Component {
         }
 
         this.setState({
-            ingredientsEdit,
+            ingredientsEdited,
             errorType
         },
             this.validateModificationForm
@@ -120,11 +120,11 @@ export default class ModifyViewer extends Component {
     // validate changes to the steps
     validateSteps() {
         let step = this.state.step_edits.value.trim(); 
-        let stepsEdit = true;
+        let stepsEdited = true;
         let errorType = {...this.state.errorType};
 
         if (step.length === 0) {
-            stepsEdit = false; 
+            stepsEdited = false; 
             errorType.step_edits = "Missing step detected: please ensure all steps are filled or modified before submitting.";
         }
 
@@ -133,7 +133,7 @@ export default class ModifyViewer extends Component {
         }
 
         this.setState({
-            stepsEdit,
+            stepsEdited,
             errorType
         },
             this.validateModificationForm
@@ -200,7 +200,6 @@ export default class ModifyViewer extends Component {
                         {fused_ingredients.map((ingredient, i) => {
                             return (
                                 <li key={i}>
-                                
                                 <input 
                                     key={i}
                                     type="text" 
@@ -208,7 +207,6 @@ export default class ModifyViewer extends Component {
                                     name="mod_ingredients"
                                     defaultValue={ingredient}
                                     onChange={e => this.editIngredients(e.currentTarget.value)}/>
-        
                                 </li>
                             );
                         })}
@@ -231,7 +229,6 @@ export default class ModifyViewer extends Component {
                         {fused_steps.map((step, i) => {
                             return (
                                 <li key={i}>
-                                    
                                     <textarea 
                                         key={i}
                                         id="mod_steps"
@@ -239,7 +236,6 @@ export default class ModifyViewer extends Component {
                                         rows="10" 
                                         defaultValue={step}
                                         onChange={e => this.editSteps(e.currentTarget.value)}/>
-
                                 </li>
                             );
                         })}
