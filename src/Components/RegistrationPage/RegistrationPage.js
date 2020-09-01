@@ -23,6 +23,7 @@ export default class RegistrationPage extends Component {
         onValidRegistration: () => {}
     };
 
+    // validate entire registration form, throw error if any checks do not pass 
     validateForm() {
         const {validName, validPass, validConfirm} = this.state; 
 
@@ -31,6 +32,7 @@ export default class RegistrationPage extends Component {
         });
     };
 
+    // capture changes to username 
     updateUsername(username) {
         this.setState({
             username: username,
@@ -39,6 +41,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // caputure changes to password 
     updatePassword(password) {
         this.setState({
             password: password,
@@ -47,6 +50,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // capture changes to re-confirmed password 
     confirmedPassword(reTypedPass) {
         this.setState({
             reTypedPass: reTypedPass
@@ -55,6 +59,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // validate username captured in state
     validateUsername() {
         const {username} = this.state; 
         let validName = true; 
@@ -76,6 +81,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // validate password captured in state
     validatePassword() {
         const {password} = this.state;
         const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\S]+/;
@@ -113,6 +119,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // validate re-confirmed password captured in state
     validateConfirmedPassword() {
         const {reTypedPass} = this.state;
         const {password} = this.state;
@@ -135,6 +142,7 @@ export default class RegistrationPage extends Component {
         );
     };
 
+    // handle POST requests for user registration on client 
     submitRegistration = e => {
         e.preventDefault();
 

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import './RecipeInfo.css';
 
 export default class RecipeInfo extends Component {
-    
     static contextType = fusionContext; 
 
+    // render cuisines that have been fused. if no fusion, leave out "fuse_cuisine" category 
     renderCuisineInfo() {
         const {base_cuisine, fuse_cuisine} = this.props;
 

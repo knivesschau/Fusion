@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AddModIngredients.css';
 
+// function using hooks to add or remove additional ingredients when user is using PATCH
 export default function AddModIngredients() {
     const [modIngredients, setModIngredients] = useState({ 
         ingredient: [],

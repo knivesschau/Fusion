@@ -24,6 +24,7 @@ export default class BaseView extends Component {
 
         return (
             <section className="View_Base">
+                {/* pass all starter recipe data to BaseRecipe Component via props */}
                 <BaseRecipe
                     recipe_id={baseRecipe.recipe_id}
                     base_name={baseRecipe.base_name}

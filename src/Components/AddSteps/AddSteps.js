@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AddSteps.css';
 
+// function using hooks to add or remove additional steps when user is using POST
 export default function AddSteps() {
     const [steps, setSteps] = useState({ step: [] });
 

@@ -27,11 +27,12 @@ export default class FuseRecipe extends Component {
 
     handleResetClick = () => {
         this.setState(this.baseState);
-        window.alert("Recipe reset! All steps and ingredients have been reset to their original instructions.")
+        window.alert("Recipe reset! All steps and ingredients have been reset to their original instructions.");
     };
 
     static contextType = fusionContext;
 
+    // handle POST requests of user-fused recipes 
     handleSubmit = (e) => {
         e.preventDefault();
 
@@ -76,6 +77,7 @@ export default class FuseRecipe extends Component {
             <section className="Fuse_Recipe">
 
                 <form className="Fusion_Form" onSubmit={this.handleSubmit}>
+                {/* pass all starter recipe data to RecipeEditor Component via props */}
                     <RecipeEditor
                         recipe_id={baseRecipe.recipe_id}
                         base_name={baseRecipe.base_name}

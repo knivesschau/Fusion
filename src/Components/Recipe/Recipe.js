@@ -12,6 +12,7 @@ export default class Recipe extends Component {
 
     static contextType = fusionContext;
 
+    // handle DELETE requests of fused recipes
     handleDelete = e => {
         e.preventDefault();
         const fused_id = this.props.fused_id;
@@ -38,6 +39,7 @@ export default class Recipe extends Component {
             });
     };
 
+    // render cuisines that have been fused. if no fusion, leave out "fuse_cuisine" category 
     renderCuisines() {
         const {fuse_cuisine, base_cuisine} = this.props;
 
@@ -57,11 +59,11 @@ export default class Recipe extends Component {
 
         const {fused_id, fused_name, date_modified, fuse_ingredients, fuse_steps} = this.props;
         
-        // convert recipe data into presentable format on client
+        // convert recipe ingredient data into presentable format on client
         const convertIngredients = Object.values({fuse_ingredients}).join();
         const fused_ingredients = convertIngredients.split("\n");
         
-        // convert recipe data into presentable format on client
+        // convert recipe step data into presentable format on client
         const convertSteps = Object.values({fuse_steps}).join();
         const fused_steps = convertSteps.split("\n");
 

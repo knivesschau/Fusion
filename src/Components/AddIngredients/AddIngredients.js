@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AddIngredients.css';
 
+// function using hooks to add or remove additional ingredients when user is using POST 
 export default function AddIngredients() {
     const [ingredients, setIngredients] = useState({ ingredient: [] });
 

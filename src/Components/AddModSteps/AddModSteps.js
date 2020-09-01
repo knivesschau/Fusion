@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AddModSteps.css';
 
+// function using hooks to add or remove additional steps when user is using PATCH
 export default function AddModSteps() {
     const [modSteps, setModSteps] = useState({ step: [] });
 
@@ -15,7 +16,7 @@ export default function AddModSteps() {
                     value={step || ""}
                     onChange={handleUpdate.bind(i)}/>
 
-                <button type="button" id="remove-mod-ingredient" onClick={removeInput.bind({i})}>Remove</button>
+                <button type="button" id="remove-mod-step" onClick={removeInput.bind({i})}>Remove</button>
             </li>
         );
     };
@@ -47,7 +48,7 @@ export default function AddModSteps() {
     return (
         <>
         {createInputs()}
-        <button type="button" id="add-mod-stept" onClick={addInput}>Add Step</button>
+        <button type="button" id="add-mod-steps" onClick={addInput}>Add Step</button>
         </>
     );
 };

@@ -9,6 +9,7 @@ export default class FusionNav extends Component {
         window.location='/';
     };
 
+    // generate navigation for users logged in 
     renderUserView() {
         return (
             <div className="User_Nav">
@@ -31,6 +32,7 @@ export default class FusionNav extends Component {
         );
     };
 
+    // generate navigation for guests/non-registered users
     renderGuestView() {
         return (
             <div className="Guest_Nav">

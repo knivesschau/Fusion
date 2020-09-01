@@ -29,7 +29,7 @@ export default class ModifyViewer extends Component {
 
     static contextType = fusionContext; 
 
-    // validate entire modification form for recipe. throw error if any of the checks are false
+    // validate entire modification form for recipe, throw error if any of the checks are false
     validateModificationForm() {
         const {nameEdited, ingredientsEdited, stepsEdited} = this.state; 
 
@@ -140,17 +140,18 @@ export default class ModifyViewer extends Component {
         );
     };
 
+    // render cuisines that have been fused. if no fusion, leave out "fuse_cuisine" category 
     renderCuisines() {
         const {fuse_cuisine, base_cuisine} = this.props;
 
         if (fuse_cuisine === null || fuse_cuisine === 'None') {
             return (
-                <h3 id="cuisine-styles-single">{base_cuisine}</h3>
+                <h3 id="cuisine-styles-mod-1">{base_cuisine}</h3>
             );
         }
         else {
             return (
-                <h3 id="cuisine-styles-both">{base_cuisine}, {fuse_cuisine}</h3>
+                <h3 id="cuisine-styles-mod-2">{base_cuisine}, {fuse_cuisine}</h3>
             );
         }
     };

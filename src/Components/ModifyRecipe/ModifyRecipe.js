@@ -29,6 +29,7 @@ export default class ModifyRecipe extends Component {
         window.alert("Recipe reset! All steps and ingredients have been reset to their original modifications.")
     };
 
+    // handle PATCH requests of user-fused recipes
     handleModifyRecipe = e => {
         e.preventDefault();
 
@@ -73,6 +74,7 @@ export default class ModifyRecipe extends Component {
             <section className="Modify_Recipe">
 
                 <form className="Modify_Form" onSubmit={this.handleModifyRecipe}>
+                    {/* pass all starter recipe data to ModifyViewer Component via props */}
                     <ModifyViewer
                         fused_id={fuseRecipe.fused_id}
                         fused_name={fuseRecipe.fused_name}

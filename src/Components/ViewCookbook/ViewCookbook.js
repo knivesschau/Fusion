@@ -16,6 +16,7 @@ export default class ViewCookbook extends Component {
                 <h1 id="cookbook-home">Your Cookbook</h1>
 
                 <ul>
+                    {/* pass through context to RecipeInfo Component via props */}
                     {fusions.map(fusion =>
                         <li key={fusion.fused_id}>
                             <RecipeInfo

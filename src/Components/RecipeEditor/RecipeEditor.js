@@ -29,7 +29,7 @@ export default class RecipeEditor extends Component {
 
     static contextType = fusionContext;
 
-    // validate entire recipe form as user changes it to their liking. throw error if any of the checks are false. 
+    // validate entire recipe form as user changes it to their liking, throw error if any of the checks are false
     validateRecipeForm() {
         const {changedName, ingredientChanged, stepChanged} = this.state; 
 

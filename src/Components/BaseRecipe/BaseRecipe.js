@@ -3,14 +3,17 @@ import fusionContext from '../../fusionContext';
 import './BaseRecipe.css';
 
 export default class BaseRecipe extends Component {
-
     static contextType = fusionContext; 
 
     render() {
 
         const {base_name, cuisine_name, ingredients, steps} = this.props; 
+
+        // convert recipe ingredient data into presentable format on client
         const convertIngredients = Object.values({ingredients}).toString();
         const convertSteps = Object.values({steps}).toString();
+
+        // convert recipe step data into presentable format on client
         const starter_ingredients = convertIngredients.split('\n');
         const starter_steps = convertSteps.split('\n');
 

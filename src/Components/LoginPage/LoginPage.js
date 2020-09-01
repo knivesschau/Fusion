@@ -14,6 +14,7 @@ export default class LoginPage extends Component {
         onValidLogin: () => {}
     };
 
+    // handle POST request on client for user logins
     handleJwtLoginAuth = e => {
         e.preventDefault();
 
