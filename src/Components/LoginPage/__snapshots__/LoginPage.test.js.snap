@@ -46,5 +46,9 @@ exports[`LoginPage Component Renders the complete LoginPage Component and all ne
       Login
     </button>
   </form>
+  <ErrorValidation
+    id="login-error"
+    message={null}
+  />
 </section>
 `;

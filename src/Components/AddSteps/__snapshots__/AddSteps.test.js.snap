@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddSteps Component Renders the complete AddSteps Component 1`] = `
+<Fragment>
+  <button
+    id="add-step"
+    onClick={[Function]}
+    type="button"
+  >
+    Add Step
+  </button>
+</Fragment>
+`;

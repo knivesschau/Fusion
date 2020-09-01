@@ -24,26 +24,27 @@ class App extends Component {
 
   // on app initialization, grab all data from API
   componentDidMount() {
+    // check for login credentials on app startup via polyfill 
     if (!TokenService.hasAuthToken()) {
       return; 
     }
     
     Promise.all([
-      // user made/created fusion recipes, dynamic data
+      // GET user made/created fusion recipes, dynamic data
       fetch(`${config.API_ENDPOINT}/recipes`, { 
         headers: {
           "authorization": `bearer ${TokenService.getAuthToken()}`
         }
       }),
 
-      // static data for starting base recipes 
+      // GET static data for starting base recipes 
       fetch(`${config.API_ENDPOINT}/bases`, { 
         headers: {
           "authorization": `bearer ${TokenService.getAuthToken()}`
         }
       }),
 
-      // static data for cuisine styles 
+      // GET static data for cuisine styles 
       fetch(`${config.API_ENDPOINT}/cuisines`, { 
         headers: {
           "authorization": `bearer ${TokenService.getAuthToken()}`
@@ -74,6 +75,7 @@ class App extends Component {
       });
   };
 
+  // handle POST of new fused recipes in the state 
   handleAddFusion = (newFusion) => {
     this.setState({
       fusions: [
@@ -83,12 +85,14 @@ class App extends Component {
     });
   };
 
+  // handle DELETE of fused recipes in the state
   handleDeleteFusion = fused_id => {
     this.setState({
       fusions: this.state.fusions.filter(fusion => fusion.fused_id !== fused_id)
     });
   };
 
+  // handle PATCH of fused recipes in the state
   handleUpdateFusion = updatedFusion => {
     const updatedFusions = this.state.fusions.map(fusion => fusion.fused_id === updatedFusion.fused_id ? updatedFusion : fusion);
 

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddModIngredients Component Renders the complete AddModIngredients Component 1`] = `
+<Fragment>
+  <button
+    id="add-mod-ingredient"
+    onClick={[Function]}
+    type="button"
+  >
+    Add Ingredient
+  </button>
+</Fragment>
+`;

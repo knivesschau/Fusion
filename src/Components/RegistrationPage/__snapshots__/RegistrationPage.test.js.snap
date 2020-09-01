@@ -5,10 +5,11 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
   className="Registration_Page"
 >
   <h3>
-    Let's Get Cooking! (Will Be Included in Final Version)
+    Let's Get Cooking!
   </h3>
   <form
     className="Register_Form"
+    onSubmit={[Function]}
   >
     <label
       htmlFor="username"
@@ -21,6 +22,7 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
       <input
         id="reg-user"
         name="register_username"
+        onChange={[Function]}
         type="text"
       />
     </label>
@@ -35,6 +37,7 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
       <input
         id="reg-password"
         name="register_password"
+        onChange={[Function]}
         type="password"
       />
     </label>
@@ -49,6 +52,7 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
       <input
         id="confirm-password"
         name="confirm_pass"
+        onChange={[Function]}
         type="password"
       />
     </label>
@@ -59,5 +63,8 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
       Register
     </button>
   </form>
+  <ErrorValidation />
+  <ErrorValidation />
+  <ErrorValidation />
 </section>
 `;

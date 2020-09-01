@@ -83,12 +83,6 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
             onChange={[Function]}
             type="text"
           />
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            Remove
-          </button>
         </li>
         <AddIngredients />
       </ul>
