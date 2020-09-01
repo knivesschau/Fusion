@@ -47,7 +47,7 @@ export default class ModifyRecipe extends Component {
             body: JSON.stringify(modifyRecipe),
             headers: {
                 "content-type": "application/json",
-                "authorization": `basic ${TokenService.getAuthToken()}`
+                "authorization": `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {

@@ -1,27 +1,47 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import TokenService from '../../services/token-services';
+import AuthApiService from '../../services/auth-api-service';
+import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
 import './LoginPage.css';
 
 export default class LoginPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {error: null};
+    };
+    
     static defaultProps = {
         onValidLogin: () => {}
     };
 
-    handleLoginAuth = e => {
+    handleJwtLoginAuth = e => {
         e.preventDefault();
 
         const {return_username, return_password} = e.target;
 
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(return_username.value, return_password.value)
-        );
+        this.setState({
+            error: null
+        });
 
-        return_username.value = '';
-        return_password.value = '';
-        this.props.onValidLogin();
-
-        window.location="/your-cookbook";
-    }
+        AuthApiService.postLogin({
+            user_name: return_username.value,
+            password: return_password.value
+        })
+            .then(res => {
+                return_username.value = '';
+                return_password.value = '';
+                TokenService.saveAuthToken(res.authToken);
+                this.props.onValidLogin();
+            })
+            .then(() => {
+                window.location="/your-cookbook";
+            })
+            .catch(res => {
+                this.setState({
+                    error: "Invalid username or password. Please double-check your crendentials and try again."
+                });
+            });
+    };
     
     render() {
         return (
@@ -29,7 +49,7 @@ export default class LoginPage extends Component {
                 
                 <h3>Log In</h3>
 
-                <form className="Login_Form" onSubmit={this.handleLoginAuth}>
+                <form className="Login_Form" onSubmit={this.handleJwtLoginAuth}>
                     
                     <label htmlFor="username">
                         <p id="return-user">Username:</p>
@@ -44,6 +64,8 @@ export default class LoginPage extends Component {
                     <button type="submit" id="user-login">Login</button>
 
                 </form>
+
+                <ErrorValidation id="login-error" message={this.state.error}/>
 
             </section>
         );

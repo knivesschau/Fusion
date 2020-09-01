@@ -24,25 +24,29 @@ class App extends Component {
 
   // on app initialization, grab all data from API
   componentDidMount() {
+    if (!TokenService.hasAuthToken()) {
+      return; 
+    }
+    
     Promise.all([
       // user made/created fusion recipes, dynamic data
       fetch(`${config.API_ENDPOINT}/recipes`, { 
         headers: {
-          'authorization': `basic ${TokenService.getAuthToken()}`
+          "authorization": `bearer ${TokenService.getAuthToken()}`
         }
       }),
 
       // static data for starting base recipes 
       fetch(`${config.API_ENDPOINT}/bases`, { 
         headers: {
-          'authorization': `basic ${TokenService.getAuthToken()}`
+          "authorization": `bearer ${TokenService.getAuthToken()}`
         }
       }),
 
       // static data for cuisine styles 
       fetch(`${config.API_ENDPOINT}/cuisines`, { 
         headers: {
-          'authorization': `basic ${TokenService.getAuthToken()}`
+          "authorization": `bearer ${TokenService.getAuthToken()}`
         }
       })
     ])

@@ -3,6 +3,7 @@ import fusionContext from '../../fusionContext';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import './Recipe.css';
+import TokenService from '../../services/token-services';
 
 export default class Recipe extends Component {    
     static defaultProps = {
@@ -18,7 +19,8 @@ export default class Recipe extends Component {
         fetch(`${config.API_ENDPOINT}/recipes/${fused_id}`, {
             method: 'DELETE',
             headers: {
-                'content-type': 'application/json'
+                "content-type": "application/json",
+                "authorization": `bearer ${TokenService.getAuthToken()}`
             },
         })
             .then(res => {
