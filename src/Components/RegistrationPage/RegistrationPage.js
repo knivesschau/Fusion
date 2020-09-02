@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
 import AuthApiService from '../../services/auth-api-service';
+import cutlery from '../../images/cutlery.png';
 import './RegistrationPage.css';
 
 export default class RegistrationPage extends Component {
@@ -149,7 +150,6 @@ export default class RegistrationPage extends Component {
         const {username, password} = e.target;
 
         this.setState({
-            successReg: null,
             submitError: null
         });
 
@@ -163,16 +163,14 @@ export default class RegistrationPage extends Component {
                 this.props.onValidRegistration();
             })
             .then(() => {
-                this.setState({
-                    successReg: "Successfully registered! Please log in to begin cooking."
-                });
+                window.alert("Successfully registered! Please log in to begin cooking.");
             })
             .then(() => {
-                window.location='/'
+                window.location='/login'
             })
             .catch(res => {
                 this.setState({
-                    error: res.error
+                    submitError: res.error
                 });
             });
     };
@@ -180,8 +178,9 @@ export default class RegistrationPage extends Component {
     render() {
         return (
             <section className="Registration_Page">
+                <img src={cutlery} id="cutlery-icon" alt="cutlery"/>
 
-                <h3>Let's Get Cooking!</h3>
+                <h3 id="register-tag">Let's Get Cooking!</h3>
 
                 <form className="Register_Form" onSubmit={this.submitRegistration}>
 
@@ -206,11 +205,11 @@ export default class RegistrationPage extends Component {
                     </label>
 
                     <label htmlFor="confirm-password">
-                        <p id="confirm-pass">Re-Type Password:</p>
+                        <p id="confirm-password">Re-Type Password:</p>
 
                         <input 
                             type="password" 
-                            id="confirm-password" 
+                            id="confirm-pass" 
                             name="confirm_pass"
                             onChange={e => this.confirmedPassword(e.target.value)}/>
                     </label>

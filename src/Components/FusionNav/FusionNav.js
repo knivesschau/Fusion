@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import cookingpot from '../../images/cooking-pot.png';
 import TokenService from '../../services/token-services';
 import './FusionNav.css';
 

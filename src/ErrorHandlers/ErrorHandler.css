@@ -1,4 +1,12 @@
+/* mobile styles first, min 320px */
 .error {
-    color: red; 
+    color: #E02500; 
     font-weight: bold;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .error {
+        font-size: 1.5rem;
+    }
 }

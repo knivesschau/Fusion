@@ -6,11 +6,11 @@ h1 {
     font-family: 'Playfair Display'
 }
 
-h2, p, input, select {
+h2, p, input[type="text"], select {
     font-family: 'Montserrat';
 }
 
-h3, a {
+h3, a, button {
     font-family: 'Roboto Slab';
 }
 
