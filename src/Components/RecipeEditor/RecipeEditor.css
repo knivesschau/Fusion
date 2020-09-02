@@ -16,7 +16,7 @@
     width: 90%;
 }
 
-#fuse_ingredients {
+.Fuse_Ingredients {
     margin: .25em;
     width: 90%;
 }
@@ -25,7 +25,7 @@
     padding-left: 1em;
 }
 
-#fuse_steps {
+.Fuse_Steps {
     vertical-align: middle;
     width: 80%;
     margin: .25em;

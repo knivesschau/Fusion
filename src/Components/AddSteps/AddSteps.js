@@ -7,17 +7,23 @@ export default function AddSteps() {
 
     function createInputs() {
         return steps.step.map((step, i) => 
-            <li id="additional-steps" key={i}>
-                <textarea
-                    required
-                    rows="10"
-                    id="fuse_steps"
-                    name="fuse_steps"
-                    value={step || ""}
-                    onChange={handleUpdate.bind(i)}/>
+            <ul id="additional-steps-list">
+                <li id="additional-steps" key={i}>
+                    
+                    <label htmlFor="add-steps-inputs">
+                        <textarea
+                            required
+                            className="Add_Steps"
+                            rows="10"
+                            id={`fuse-steps-add-${i}`}
+                            name="fuse_steps"
+                            value={step || ""}
+                            onChange={handleUpdate.bind(i)}/>
+                    </label>
 
-                <button type="button" id="remove-step" onClick={removeInput.bind({i})}>Remove</button>
-            </li>
+                    <button type="button" id="remove-step" onClick={removeInput.bind({i})}>Remove</button>
+                </li>
+            </ul>
         );
     };
     

@@ -166,11 +166,14 @@ export default class RecipeEditor extends Component {
 
                 <div className="Title_Editor">
                     <h2 id="title-instructor">Enter a New Recipe Title:</h2>
-                    <input 
-                        id="name-changer" 
-                        name="fuse_name" 
-                        defaultValue={base_name}
-                        onChange={e => this.updateRecipeName(e.target.value)}/>
+                    
+                    <label htmlFor="name-changer-input">
+                        <input 
+                            id="name-changer" 
+                            name="fuse_name" 
+                            defaultValue={base_name}
+                            onChange={e => this.updateRecipeName(e.target.value)}/>
+                    </label>
                     
                     <ErrorValidation
                         message={this.state.errorType.recipe_name}/>
@@ -182,28 +185,26 @@ export default class RecipeEditor extends Component {
 
                     <label htmlFor="cuisines" name="fuse_cuisine">
                         Select your "Fusion" style (or, select "None"): 
+                        <select 
+                            required 
+                            name="fuse_cuisine"
+                            id="fusion_cuisine">
+
+                            <option value="">--Select One--</option>
+
+                            {cuisines.map((cuisine, i) => {
+                                return (
+                                    <option 
+                                        key={i + 1} 
+                                        value={i + 1}>
+
+                                        {cuisine.cuisine_name}
+
+                                    </option>
+                                );
+                            })}
+                        </select>
                     </label>
-
-                    <select 
-                        required 
-                        name="fuse_cuisine"
-                        id="fusion_cuisine">
-
-                        <option value="">--Select One--</option>
-
-                        {cuisines.map((cuisine, i) => {
-                            return (
-                                <option 
-                                    key={i + 1} 
-                                    value={i + 1}>
-
-                                    {cuisine.cuisine_name}
-
-                                </option>
-                            );
-                        })}
-
-                    </select>
 
                 </div>
 
@@ -216,13 +217,18 @@ export default class RecipeEditor extends Component {
                         {starter_ingredients.map((ingredient, i) => {                           
                             return (
                                 <li key={i}>
-                                <input 
-                                    key={i}
-                                    type="text" 
-                                    id="fuse_ingredients"
-                                    name="fuse_ingredients"
-                                    defaultValue={ingredient}
-                                    onChange={e => this.updateIngredients(e.currentTarget.value)}/>
+                                
+                                <label htmlFor="fuse-ingredients-inputs">
+                                    <input 
+                                        className="Fuse_Ingredients"
+                                        key={i}
+                                        type="text" 
+                                        id={`fuse-ingredients-${i}`}
+                                        name="fuse_ingredients"
+                                        defaultValue={ingredient}
+                                        onChange={e => this.updateIngredients(e.currentTarget.value)}/>
+                                </label>
+
                                 </li>
                             );
                         })}
@@ -244,13 +250,18 @@ export default class RecipeEditor extends Component {
                         {starter_steps.map((step, i) => {
                             return (
                                 <li key={i}>
-                                    <textarea 
-                                        key={i}
-                                        id="fuse_steps"
-                                        name="fuse_steps"
-                                        rows="10"
-                                        defaultValue={step}
-                                        onChange={e => this.updateSteps(e.currentTarget.value)}/>
+                                    
+                                    <label htmlFor="fuse-steps-inputs">
+                                        <textarea 
+                                            className="Fuse_Steps"
+                                            key={i}
+                                            id={`fuse-steps-${i}`}
+                                            name="fuse_steps"
+                                            rows="10"
+                                            defaultValue={step}
+                                            onChange={e => this.updateSteps(e.currentTarget.value)}/>
+                                    </label>
+
                                 </li>
                             );
                         })}

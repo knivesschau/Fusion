@@ -7,17 +7,23 @@ export default function AddIngredients() {
 
     function createInputs() {
         return ingredients.ingredient.map((ingredient, i) => 
-            <li id="additional-ingredients" key={i}>
-                <input
-                    required
-                    type="text"
-                    id="fuse_ingredients"
-                    name="fuse_ingredients"
-                    value={ingredient || ""}
-                    onChange={handleUpdate.bind(i)}/>
+            <ul id="add-ingredients">
+                <li id="add-ingredients-list" key={i}>
+                    
+                    <label htmlFor="add-ingredients-inputs">
+                        <input
+                            required
+                            className="Add_Ingredients"
+                            type="text"
+                            id={`fuse-ingredients-add-${i}`}
+                            name="fuse_ingredients"
+                            value={ingredient || ""}
+                            onChange={handleUpdate.bind(i)}/>
+                    </label>
 
-                <button type="button" id="remove-ingredient" onClick={removeInput.bind({i})}>Remove</button>
-            </li>
+                    <button type="button" id="remove-ingredient" onClick={removeInput.bind({i})}>Remove</button>
+                </li>
+            </ul>
         );
     };
     

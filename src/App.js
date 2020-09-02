@@ -14,6 +14,7 @@ import RegistrationPage from './Components/RegistrationPage/RegistrationPage';
 import FusionNav from './Components/FusionNav/FusionNav';
 import ModifyRecipe from './Components/ModifyRecipe/ModifyRecipe';
 import PickStarter from './Components/PickStarter/PickStarter';
+import './App.css';
 
 class App extends Component {
   state = {

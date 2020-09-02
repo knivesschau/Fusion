@@ -181,11 +181,14 @@ export default class ModifyViewer extends Component {
 
                 <div className="Title_Modifier">
                     <h2 id="title-changer">Change Your Recipe Title:</h2>
-                    <input 
-                        id="fuse_name_mod" 
-                        name="fuse_name_mod" 
-                        defaultValue={fused_name}
-                        onChange={e => this.editRecipeName(e.target.value)}/>
+                    
+                    <label htmlFor="fuse-name-input">
+                        <input 
+                            id="fuse_name_mod" 
+                            name="fuse_name_mod" 
+                            defaultValue={fused_name}
+                            onChange={e => this.editRecipeName(e.target.value)}/>
+                    </label>
 
                     <ErrorValidation
                         message={this.state.errorType.recipe_name}/>
@@ -200,13 +203,18 @@ export default class ModifyViewer extends Component {
                         {fused_ingredients.map((ingredient, i) => {
                             return (
                                 <li key={i}>
-                                <input 
-                                    key={i}
-                                    type="text" 
-                                    id="mod_ingredients"
-                                    name="mod_ingredients"
-                                    defaultValue={ingredient}
-                                    onChange={e => this.editIngredients(e.currentTarget.value)}/>
+
+                                <label htmlFor="mod-ingredient-inputs">
+                                    <input 
+                                        className="Mod_Ingredients"
+                                        key={i}
+                                        type="text" 
+                                        id={`mod-ingredients-${i}`}
+                                        name="mod_ingredients"
+                                        defaultValue={ingredient}
+                                        onChange={e => this.editIngredients(e.currentTarget.value)}/>
+                                </label>
+
                                 </li>
                             );
                         })}
@@ -228,13 +236,18 @@ export default class ModifyViewer extends Component {
                         {fused_steps.map((step, i) => {
                             return (
                                 <li key={i}>
-                                    <textarea 
-                                        key={i}
-                                        id="mod_steps"
-                                        name="mod_steps"
-                                        rows="10" 
-                                        defaultValue={step}
-                                        onChange={e => this.editSteps(e.currentTarget.value)}/>
+                                    
+                                    <label htmlFor="mod-steps-inputs">
+                                        <textarea 
+                                            className="Mod_Steps"
+                                            key={i}
+                                            id={`mod-steps-${i}`}
+                                            name="mod_steps"
+                                            rows="10" 
+                                            defaultValue={step}
+                                            onChange={e => this.editSteps(e.currentTarget.value)}/> 
+                                    </label>
+
                                 </li>
                             );
                         })}
