@@ -1,9 +1,51 @@
+/* mobile styles first, min 320px */
 .Guest_Nav, .User_Nav {
-    background-color: #aaa;
-    border: 1px solid black;
+    background-color: rgb(245, 245, 245, .9);
+    box-shadow: inset 3px 0px 11px 0px black;
+    padding: .25em;
+    color: black;
     display: flex; 
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
-    font-size: 1.15em;
+    font-size: 1.25rem;
+    font-weight: bolder;
 }
+
+#link-home, #link-cookbook, #link-fusion, #link-logout, #link-register, #link-login {
+    text-decoration: none;
+    transition-property: background;
+    transition-duration: .2s;
+    transition-timing-function: ease-in;
+}
+
+#link-home:hover, #link-cookbook:hover, #link-fusion:hover, #link-logout:hover, #link-register:hover, #link-login:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+    background-color: #acc29e;
+}
+
+#link-home:active, #link-cookbook:active, #link-fusion:active, #link-logout:active, #link-register:active, #link-login:active {
+    background-color: #577147;
+}
+
+/* tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+    .Guest_Nav, .User_Nav {
+        font-size: 1.65rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Guest_Nav, .User_Nav {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Guest_Nav, .User_Nav {
+        font-size: 2.5rem;
+        padding: .15em;
+    }
+} 

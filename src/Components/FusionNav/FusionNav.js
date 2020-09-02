@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import cookingpot from '../../images/cooking-pot.png';
 import TokenService from '../../services/token-services';
 import './FusionNav.css';
 
@@ -13,19 +14,19 @@ export default class FusionNav extends Component {
     renderUserView() {
         return (
             <div className="User_Nav">
-                <Link to="/">
+                <Link id="link-home" to="/">
                     Home
                 </Link>
 
-                <Link to="/your-cookbook">
+                <Link id="link-cookbook" to="/your-cookbook">
                     Cookbook
                 </Link>
 
-                <Link to="/starter-recipes">
+                <Link id="link-fusion" to="/starter-recipes">
                     Fuse
                 </Link>
-
-                <Link to="/" onClick={this.handleLogoutClick}>
+                
+                <Link id="link-logout" to="/" onClick={this.handleLogoutClick}>
                     Logout
                 </Link>
             </div>
@@ -36,15 +37,15 @@ export default class FusionNav extends Component {
     renderGuestView() {
         return (
             <div className="Guest_Nav">
-                <Link to="/">
+                <Link id="link-home" to="/">
                     About
                 </Link>
                 
-                <Link to="/get-started">
+                <Link id="link-register" to="/get-started">
                     Register
                 </Link>
-
-                <Link to="/login">
+                
+                <Link id="link-login" to="/login">
                     Log In
                 </Link>
             </div>
@@ -53,11 +54,11 @@ export default class FusionNav extends Component {
     
     render() {
         return (
-            <nav role="navigation" className="Fusion_Nav">
-                {TokenService.hasAuthToken()
-                    ? this.renderUserView()
-                    : this.renderGuestView()}
-            </nav>
+            <>
+            {TokenService.hasAuthToken()
+                ? this.renderUserView()
+                : this.renderGuestView()}
+            </>
         );
     };
 };
