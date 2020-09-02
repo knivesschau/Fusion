@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fusionContext from '../../fusionContext';
 import { Link } from 'react-router-dom';
 import config from '../../config';
+import cookbook from '../../images/cookbook.png';
 import './Recipe.css';
 import TokenService from '../../services/token-services';
 
@@ -72,6 +73,8 @@ export default class Recipe extends Component {
                 
                 <div className="Recipe_Expand">
 
+                    <img src={cookbook} id="cookbook-recipe-icon" alt="cookbook"/>
+
                     <h2 id="recipe-title">{fused_name}</h2>
                     
                     {this.renderCuisines()}
@@ -85,7 +88,7 @@ export default class Recipe extends Component {
                     <button id="delete-recipe" type="button" onClick={this.handleDelete}>Delete</button>
 
                     <div className="Ingredients_Section">
-                        <h4 id="ingredients-title"><u>Ingredients</u></h4>
+                        <h4 id="ingredients-title">Ingredients</h4>
                         
                         <ul id="display-ingredients">
                             {fused_ingredients.map((fuse_ingredients, i) => {
@@ -97,7 +100,7 @@ export default class Recipe extends Component {
                     </div>
                 
                     <div className="Steps_Section">
-                        <h4 id="steps-title"><u>Steps</u></h4>
+                        <h4 id="steps-title">Steps</h4>
                         
                         <ol id="display-steps">
                             {fused_steps.map((step, i) => {
