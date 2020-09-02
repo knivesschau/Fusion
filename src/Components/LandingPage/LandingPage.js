@@ -30,7 +30,7 @@ export default class LandingPage extends Component {
 
                     <p id="tagline2">
                         Want to adjust the measurements of a dish or use ingredients from another cooking style? 
-                        Fusion makes it easy! Fuse and experiment with 10 starter recipes across 5 delicious cuisines and save your 
+                        Fusion makes it easy! Fuse and experiment with 14 starter recipes across 7 delicious cuisines and save your 
                         modifications to your personal recipe book. Who knew cooking could be so much fun?
                     </p>
                 </div>

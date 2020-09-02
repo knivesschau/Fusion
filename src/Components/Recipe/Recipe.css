@@ -10,6 +10,11 @@
     padding: .35em;
 }
 
+#recipe-container {
+    height: 25%;
+    overflow-y: scroll;
+}
+
 #recipe-title {
     font-size: 1.2rem;
     text-shadow: 3px 2px 2px white;
