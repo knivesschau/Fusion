@@ -14,7 +14,7 @@ export default class FusionNav extends Component {
         return (
             <div className="User_Nav">
                 <Link id="link-home" to="/">
-                    Home
+                    About
                 </Link>
 
                 <Link id="link-cookbook" to="/your-cookbook">

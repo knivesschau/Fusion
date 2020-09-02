@@ -6,14 +6,13 @@
     color: black;
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.10rem;
     font-weight: bolder;
 }
 
 #link-home, #link-cookbook, #link-fusion, #link-logout, #link-register, #link-login {
-    text-decoration: none;
     text-transform: uppercase;
     transition-property: background;
     transition-duration: .2s;

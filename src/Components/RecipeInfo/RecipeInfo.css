@@ -1,4 +1,132 @@
+/* mobile styles first, min 320px */
 .Recipe_Mini {
-    border: 1px solid black;
+    background-color: rgb(245, 245, 245, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 2em; 
+    box-shadow: inset -3px -2px 5px 0 black;
     margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+.Recipe_Mini, .Recipe_MiniInfo {
+    transition-property: background; 
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+}
+
+.Recipe_Mini:hover {
+    background-color: #FCE9D9;
+}
+
+#recipe-name {
+    color: black;
+    font-size: 1.2rem;
+    text-shadow: 3px 2px 2px white;
+}
+
+#recipe-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+}
+
+#recipe-name:active {
+    color: #9e6a7e;
+    text-shadow: 3px 2px 2px white;
+}
+
+#recipe-created {
+    text-shadow: -1px 2px 3px white;
+}
+
+#recipe-created, #culinary-styles {
+    font-size: 1.10rem;
+    margin-top: -.35em;
+}
+
+#culinary-styles {
+    color: #597246;
+    text-shadow: 0px 0px 0px black;
+}
+
+#chef-hat-icon {
+    height: 40%;
+    width: 40%;
+    margin-bottom: -1em;
+    margin-top: -1em;
+}
+
+#chef-hat-icon:hover {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  
+  50%{
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  
+  100%{
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .Recipe_Mini {
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+
+    #recipe-name {
+        font-size: 1.75rem;
+    }
+
+    #recipe-created, #culinary-styles {
+        font-size: 1.5rem;
+    }
+
+    #chef-hat-icon {
+        height: 29%;
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Recipe_Mini {
+        margin-left: 20em;
+        margin-right: 20em;
+        margin-bottom: 2em;
+    }
+    
+    #recipe-name {
+        font-size: 2rem;
+    }
+
+    #recipe-created, #culinary-styles {
+        font-size: 1.75rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Recipe_Mini {
+        margin-left: 30em;  
+        margin-right: 30em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Recipe_Mini {
+        margin-left: 40em;  
+        margin-right: 40em;
+    }
 }

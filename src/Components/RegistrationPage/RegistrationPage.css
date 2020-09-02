@@ -45,6 +45,7 @@
 }
 
 #register-new {
+    cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
     background-color: #A9C09B;

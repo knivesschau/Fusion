@@ -37,7 +37,7 @@
 #pitch1, #pitch2, #pitch3 {
     font-size: 1.40rem;
     color: white;
-    text-shadow: 3px 2px 2px black
+    text-shadow: 3px 2px 2px black;
 }
 
 #pitch1, #pitch3 {
