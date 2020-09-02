@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TokenService from '../../services/token-services';
 import AuthApiService from '../../services/auth-api-service';
 import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
+import cookingpot from '../../images/cooking-pot.png';
 import './LoginPage.css';
 
 export default class LoginPage extends Component {
@@ -48,7 +49,9 @@ export default class LoginPage extends Component {
         return (
             <section className="Login_Page">
                 
-                <h3>Log In</h3>
+                <img src={cookingpot} id="cooking-pot-icon" alt="cooking pot"/>
+
+                <h3 id="login-tag">Log In</h3>
 
                 <form className="Login_Form" onSubmit={this.handleJwtLoginAuth}>
                     

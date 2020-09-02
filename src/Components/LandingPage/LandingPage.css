@@ -28,7 +28,6 @@
     margin-top: -1.75em;
     padding: .25em;
     color: #F9D1B1;
-    background-color: rgb(60, 60, 62, .10);
     border: 1px solid transparent;
     border-radius: 5em;
     text-shadow: 5px 3px 5px black;
@@ -127,5 +126,12 @@
 
     #pitch1, #pitch2, #pitch3 {
         margin-top: -.25em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Intro_Tagline, .Second_Tagline, .Third_Tagline {
+        margin-left: 45em;
+        margin-right: 45em;
     }
 }

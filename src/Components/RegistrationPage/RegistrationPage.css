@@ -80,7 +80,9 @@
 /* tablet and desktop styles */
 @media only screen and (min-width: 768px) {
     .Registration_Page {
-        margin: 5em;
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 3em;
         border-radius: 5em;
     }
 
@@ -112,8 +114,8 @@
 
 @media only screen and (min-width: 1200px) {
     .Registration_Page {
-        margin: 10em;
-        margin-top: 3em;
+        margin-left: 15em;
+        margin-right: 15em;
     }
 
     #register-tag {
