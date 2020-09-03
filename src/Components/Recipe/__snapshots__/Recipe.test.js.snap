@@ -7,6 +7,11 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
   <div
     className="Recipe_Expand"
   >
+    <img
+      alt="cookbook"
+      id="cookbook-recipe-icon"
+      src="cookbook.png"
+    />
     <h2
       id="recipe-title"
     />
@@ -45,9 +50,7 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
       <h4
         id="ingredients-title"
       >
-        <u>
-          Ingredients
-        </u>
+        Ingredients
       </h4>
       <ul
         id="display-ingredients"
@@ -64,9 +67,7 @@ exports[`Recipe Component Renders the complete Recipe Component and all nested C
       <h4
         id="steps-title"
       >
-        <u>
-          Steps
-        </u>
+        Steps
       </h4>
       <ol
         id="display-steps"

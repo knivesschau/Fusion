@@ -4,7 +4,14 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
 <section
   className="Registration_Page"
 >
-  <h3>
+  <img
+    alt="cutlery"
+    id="cutlery-icon"
+    src="cutlery.png"
+  />
+  <h3
+    id="register-tag"
+  >
     Let's Get Cooking!
   </h3>
   <form
@@ -45,12 +52,12 @@ exports[`RegistrationPage Component Renders the complete RegistrationPage Compon
       htmlFor="confirm-password"
     >
       <p
-        id="confirm-pass"
+        id="confirm-password"
       >
         Re-Type Password:
       </p>
       <input
-        id="confirm-password"
+        id="confirm-pass"
         name="confirm_pass"
         onChange={[Function]}
         type="password"

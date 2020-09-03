@@ -4,7 +4,6 @@ exports[`BaseViewer Component Renders the complete BaseViewer Component and all 
 <section
   className="View_Base"
 >
-  <BaseRecipe />
   <button
     id="choose-recipe"
     onClick={[Function]}
@@ -19,5 +18,6 @@ exports[`BaseViewer Component Renders the complete BaseViewer Component and all 
   >
     Pick Another Recipe
   </button>
+  <BaseRecipe />
 </section>
 `;

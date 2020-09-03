@@ -8,6 +8,11 @@ exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all 
     <div
       className="Base_RecipeInfo"
     >
+      <img
+        alt="hand mixer"
+        id="hand-mixer-icon"
+        src="hand-mixer.png"
+      />
       <h2
         id="base-title"
       />
@@ -21,11 +26,9 @@ exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all 
       className="Base_Ingredients"
     >
       <h4
-        id="base-ingredients"
+        id="ingredients-title"
       >
-        <u>
-          Ingredients
-        </u>
+        Ingredients
       </h4>
       <ul
         id="base-ingredients"
@@ -42,9 +45,7 @@ exports[`BaseRecipe Component Renders the complete BaseRecipe Component and all 
       <h4
         id="steps-title"
       >
-        <u>
-          Steps
-        </u>
+        Steps
       </h4>
       <ol
         id="base-steps"

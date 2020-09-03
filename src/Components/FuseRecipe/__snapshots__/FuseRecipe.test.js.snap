@@ -20,7 +20,7 @@ exports[`FuseRecipe Component Renders the complete FuseRecipe Component and all 
       onClick={[Function]}
       type="reset"
     >
-      Start Over
+      Cancel
     </button>
   </form>
 </section>

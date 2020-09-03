@@ -9,6 +9,15 @@ exports[`ViewCookbook Component Renders the complete ViewCookbook Component and 
   >
     Your Cookbook
   </h1>
+  <div
+    className="Welcome_Message"
+  >
+    <span
+      id="welcome"
+    >
+      Welcome! Look at your recipes below, or click "Fuse" to make one!
+    </span>
+  </div>
   <ul />
 </section>
 `;

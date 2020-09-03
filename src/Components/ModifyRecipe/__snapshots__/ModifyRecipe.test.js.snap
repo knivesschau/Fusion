@@ -16,11 +16,11 @@ exports[`ModifyRecipe Component Renders the complete ModifyRecipe Component and 
       Modify Recipe
     </button>
     <button
-      id="restart-mod"
+      id="cancel-mod"
       onClick={[Function]}
       type="reset"
     >
-      Start Over
+      Cancel
     </button>
   </form>
 </section>

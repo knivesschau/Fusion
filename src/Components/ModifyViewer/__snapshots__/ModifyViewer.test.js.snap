@@ -17,30 +17,45 @@ exports[`ModifyViewer Component Renders the complete ModifyViewer Component and 
       Invalid Date
     </h2>
     <h3
-      id="cuisine-styles-both"
+      id="cuisine-styles-mod-2"
     >
       , 
     </h3>
     <div
       className="Title_Modifier"
     >
+      <img
+        alt="oven mitt"
+        id="mitt-fuse-icon"
+        src="oven-mitt.png"
+      />
       <h2
         id="title-changer"
       >
         Change Your Recipe Title:
       </h2>
-      <input
-        id="fuse_name_mod"
-        name="fuse_name_mod"
-        onChange={[Function]}
-      />
+      <label
+        htmlFor="fuse-name-input"
+      >
+        <input
+          id="fuse-name-mod"
+          name="fuse_name_mod"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
       <ErrorValidation />
     </div>
     <div
       className="Ingredient_Modifier"
     >
+      <img
+        alt="flour sack"
+        id="flour-fuse-icon"
+        src="flour-sack.png"
+      />
       <h2
-        id="mod-ingredients"
+        id="mod-ingredients-title"
       >
         Ingredients
       </h2>
@@ -55,14 +70,19 @@ exports[`ModifyViewer Component Renders the complete ModifyViewer Component and 
         <li
           key="0"
         >
-          <input
-            defaultValue=""
-            id="mod_ingredients"
-            key="0"
-            name="mod_ingredients"
-            onChange={[Function]}
-            type="text"
-          />
+          <label
+            htmlFor="mod-ingredient-inputs"
+          >
+            <input
+              className="Mod_Ingredients"
+              defaultValue=""
+              id="mod-ingredients"
+              key="0"
+              name="mod_ingredients"
+              onChange={[Function]}
+              type="text"
+            />
+          </label>
         </li>
         <AddModIngredients />
       </ul>
@@ -71,8 +91,13 @@ exports[`ModifyViewer Component Renders the complete ModifyViewer Component and 
     <div
       className="Steps_Modifier"
     >
+      <img
+        alt="frying pan"
+        id="pan-fuse-icon"
+        src="frying-pan.png"
+      />
       <h2
-        id="mod-steps"
+        id="mod-steps-title"
       >
         Steps
       </h2>
@@ -87,14 +112,19 @@ exports[`ModifyViewer Component Renders the complete ModifyViewer Component and 
         <li
           key="0"
         >
-          <textarea
-            defaultValue=""
-            id="mod_steps"
-            key="0"
-            name="mod_steps"
-            onChange={[Function]}
-            rows="10"
-          />
+          <label
+            htmlFor="mod-steps-inputs"
+          >
+            <textarea
+              className="Mod_Steps"
+              defaultValue=""
+              id="mod-steps"
+              key="0"
+              name="mod_steps"
+              onChange={[Function]}
+              rows="10"
+            />
+          </label>
         </li>
         <AddModSteps />
       </ol>
