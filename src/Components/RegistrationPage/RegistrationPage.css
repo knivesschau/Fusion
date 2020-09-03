@@ -1,8 +1,14 @@
+/* mobile styles first, min 320px */
 .Registration_Page {
-    font-size: 1.10em;
+    overflow-y: hidden;
+    font-size: 1.10rem;
     text-align: center;
-    border: 1px solid black;
-    margin: 2em;
+    background-color: rgb(190, 190, 190, .8);
+    border: 1px solid grey;
+    border-radius: 2em;
+    box-shadow: inset -2px -2px 5px 0 black;
+    margin: 1.5em;
+    margin-top: 1.75em;
     padding: 1em;
 }
 
@@ -10,12 +16,144 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 1em;
+    margin-top: -1.75em;
+}
+
+#register-tag {
+    font-size: 1.40rem;
+    color: white; 
+    text-shadow: 3px 2px 2px black;
+    margin-top: -.25em;
+}
+
+#new-user, #new-password, #confirm-password {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: .25em;
+}
+
+#reg-user, #reg-password, #confirm-pass {
+    transition: border .3s ease-out; 
+    padding: .25em;
+    width: 70%;
+}
+
+#reg-user:focus, #reg-password:focus, #confirm-pass:focus {
+    border: 10px solid #881600;
+    border-style: none none none solid;
+    background-color: white;
 }
 
 #register-new {
-    font-size: 1em;
-    margin-top: 1em;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1.25em;
+    margin-bottom: .75em;
+    padding: 7px 25px;
+    border: 1px solid black;
+    border-radius: .75em;
+    transition: all .15s;
+}
+
+#register-new:hover {
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#register-new:active {
+    background-color: #881600;
+}
+
+#cutlery-icon {
+    height: 45%;
+    width: 45%;
+}
+
+/* tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+    .Registration_Page {
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 3em;
+        border-radius: 5em;
+    }
+
+    #register-tag {
+        font-size: 2.5rem;
+        margin-bottom: .5em;
+    }
+
+    #new-user, #new-password, #confirm-password, #register-new {
+        font-size: 1.5rem;
+    }
+
+    #register-new {
+        margin-bottom: .5em;
+        padding-top: .45em;
+        padding-bottom: .45em;
+    }
+
+    #reg-user, #reg-password, #confirm-pass {
+        width: 60%;
+        font-size: 1.25rem;
+    }
+
+    #cutlery-icon {
+        height: 30%;
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Registration_Page {
+        margin-left: 15em;
+        margin-right: 15em;
+    }
+
+    #register-tag {
+        font-size: 3.5rem;
+    }
+
+    #new-user, #new-password, #confirm-password, #register-new {
+        font-size: 2rem;
+    }
+
+    #reg-user, #reg-password, #confirm-pass {
+        width: 50%;
+        font-size: 1.5rem;
+    }
+
+    #cutlery-icon {
+        height: 25%;
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Registration_Page {
+        margin-left: 25em;
+        margin-right: 25em;
+        margin-top: 5em;
+    }
+
+    #cutlery-icon {
+        height: 15%;
+        width: 15%;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Registration_Page {
+        margin-left: 40em;
+        margin-right: 40em;
+    }
 }

@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import chef from '../../images/chef.png';
+import cookbook from '../../images/cookbook.png';
+import ovenmitt from '../../images/oven-mitt.png';
 import './LandingPage.css';
 
 export default class LandingPage extends Component {
@@ -12,6 +15,7 @@ export default class LandingPage extends Component {
                 </header>
 
                 <div className="Intro_Tagline">
+                    <img src={chef} id="chef-icon" alt="chef"/>
                     <h3 id="pitch1">Let's Get Cooking!</h3>
 
                     <p id="tagline1">
@@ -21,16 +25,18 @@ export default class LandingPage extends Component {
                 </div>
 
                 <div className="Second_Tagline">
+                    <img src={cookbook} id="cookbook-icon" alt="cookbook"/>
                     <h3 id="pitch2">Fusion Made Easy</h3>
 
                     <p id="tagline2">
                         Want to adjust the measurements of a dish or use ingredients from another cooking style? 
-                        Fusion makes it easy! Fuse and experiment with 10 starter recipes across 5 delicious cuisines and save your 
+                        Fusion makes it easy! Fuse and experiment with 14 starter recipes across 7 delicious cuisines and save your 
                         modifications to your personal recipe book. Who knew cooking could be so much fun?
                     </p>
                 </div>
 
                 <div className="Third_Tagline">
+                    <img src={ovenmitt} id="oven-mitt-icon" alt="oven-mitt"/>
                     <h3 id="pitch3">Chef on the Go</h3>
 
                     <p id="tagline3">

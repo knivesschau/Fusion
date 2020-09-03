@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import AddIngredients from '../AddIngredients/AddIngredients';
+import AddSteps from '../AddSteps/AddSteps';
 import fusionContext from '../../fusionContext';
 import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
+import floursack from '../../images/flour-sack.png';
+import fryingpan from '../../images/frying-pan.png';
+import ovenmitt from '../../images/oven-mitt.png';
+import cookbook from '../../images/cookbook.png';
 import './RecipeEditor.css';
 
 export default class RecipeEditor extends Component {
@@ -17,9 +23,9 @@ export default class RecipeEditor extends Component {
             step_changes: {
                 value: '',
             },
-            changeName: false,
-            ingredientChanges: false,
-            stepChanges: false,
+            changedName: false,
+            ingredientChanged: false,
+            stepChanged: false,
             validChanges: false, 
             errorType: {}
         };
@@ -27,12 +33,12 @@ export default class RecipeEditor extends Component {
 
     static contextType = fusionContext;
 
-    // validate entire recipe form as user changes it to their liking. throw error if any of the checks are false. 
+    // validate entire recipe form as user changes it to their liking, throw error if any of the checks are false
     validateRecipeForm() {
-        const {changeName, ingredientChanges, stepChanges} = this.state; 
+        const {changedName, ingredientChanged, stepChanged} = this.state; 
 
         this.setState({
-            validChanges: changeName && ingredientChanges && stepChanges
+            validChanges: changedName && ingredientChanged && stepChanged
         });
     };
 
@@ -56,6 +62,8 @@ export default class RecipeEditor extends Component {
         },
             this.validateIngredients
         );
+
+        console.log(this.state.ingredient_changes.value);
     };
 
     // capture step changes 
@@ -72,11 +80,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the recipe name
     validateRecipeName() {
         let recipeName = this.state.recipe_name.value.trim();
-        let changeName = true; 
+        let changedName = true; 
         let errorType = {...this.state.errorType};
 
         if (recipeName.length === 0) {
-            changeName = false;
+            changedName = false;
             errorType.recipe_name = "Please edit the original recipe name, or type in another name.";
         }
 
@@ -85,7 +93,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            changeName,
+            changedName,
             errorType
         },
             this.validateRecipeForm
@@ -95,11 +103,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the ingredients
     validateIngredients() {
         let ingredient = this.state.ingredient_changes.value.trim();
-        let ingredientChanges = true; 
+        let ingredientChanged = true; 
         let errorType = {...this.state.errorType};
 
         if (ingredient.length === 0) {
-            ingredientChanges = false; 
+            ingredientChanged = false; 
             errorType.ingredient_changes = "Missing ingredient detected: please ensure all ingredients are filled or modified before submitting.";
         }
 
@@ -108,7 +116,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            ingredientChanges,
+            ingredientChanged,
             errorType
         },
             this.validateRecipeForm
@@ -118,11 +126,11 @@ export default class RecipeEditor extends Component {
     // validate changes to the steps
     validateSteps() {
         let step = this.state.step_changes.value.trim(); 
-        let stepChanges = true;
+        let stepChanged = true;
         let errorType = {...this.state.errorType};
 
         if (step.length === 0) {
-            stepChanges = false; 
+            stepChanged = false; 
             errorType.step_changes = "Missing step detected: please ensure all steps are filled or modified before submitting.";
         }
 
@@ -131,7 +139,7 @@ export default class RecipeEditor extends Component {
         }
 
         this.setState({
-            stepChanges,
+            stepChanged,
             errorType
         },
             this.validateRecipeForm
@@ -155,85 +163,99 @@ export default class RecipeEditor extends Component {
         //get static cuisine data 
         const {cuisines=[]} = this.context;
 
-
         return (
             <>
             <section className="Recipe_Editor"> 
                 <h1 id="fuse-info">Fusing: {base_name}</h1>
 
                 <div className="Title_Editor">
+                    <img src={ovenmitt} id="mitt-fuse-icon" alt="oven mitt"/>
+
                     <h2 id="title-instructor">Enter a New Recipe Title:</h2>
-                    <input 
-                        id="name-changer" 
-                        name="fuse_name" 
-                        defaultValue={base_name}
-                        onChange={e => this.updateRecipeName(e.target.value)}/>
+                    
+                    <label htmlFor="name-changer-input">
+                        <input 
+                            type="text"
+                            id="name-changer" 
+                            name="fuse_name" 
+                            defaultValue={base_name}
+                            onChange={e => this.updateRecipeName(e.target.value)}/>
+                    </label>
                     
                     <ErrorValidation
-                        value={this.state.validName}
                         message={this.state.errorType.recipe_name}/>
                 </div>
                 
                 <div className="Fuse_Cuisine">
-                    <p id="cuisine-info">Your starting culinary style is: {cuisine_name} </p>
+                    <img src={cookbook} id="cookbook-fuse-icon" alt="cookbook"/>
+
+                    <h2 id="cuisine-info">Your starting culinary style is: {cuisine_name}</h2>
                     <input type="hidden" name="base_cuisine" defaultValue={cuisine_id}/>
 
                     <label htmlFor="cuisines" name="fuse_cuisine">
-                        Select your "Fusion" style (or, select "None"): 
+                        <p id="select-cuisine"> Select your "Fusion" style (or, select "None"): </p>
+
+                        <select 
+                            required 
+                            name="fuse_cuisine"
+                            id="fusion-cuisine">
+
+                            <option value="">--Select One--</option>
+
+                            {cuisines.map((cuisine, i) => {
+                                return (
+                                    <option 
+                                        key={i + 1} 
+                                        value={i + 1}>
+
+                                        {cuisine.cuisine_name}
+
+                                    </option>
+                                );
+                            })}
+                        </select>
                     </label>
-
-                    <select 
-                        required 
-                        name="fuse_cuisine"
-                        id="fusion_cuisine">
-
-                        <option value="">--Select One--</option>
-
-                        {cuisines.map((cuisine, i) => {
-                            return (
-                                <option 
-                                    key={i + 1} 
-                                    value={i + 1}>
-
-                                    {cuisine.cuisine_name}
-
-                                </option>
-                            );
-                        })}
-
-                    </select>
 
                 </div>
 
                 <div className="Edit_Ingredients">
+                    <img src={floursack} id="flour-fuse-icon" alt="flour sack"/>
+
                     <h2 id="ingredient-title">Ingredients</h2>
 
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
 
                     <ul id="edit-list-ingredients">
-                        {starter_ingredients.map((ingredient, i) => {                            
+                        {starter_ingredients.map((ingredient, i) => {                           
                             return (
                                 <li key={i}>
-                                <input 
-                                    key={i}
-                                    type="text" 
-                                    id="fuse_ingredients"
-                                    name="fuse_ingredients"
-                                    defaultValue={ingredient}
-                                    onChange={e => this.updateIngredients(e.currentTarget.value)}/>
+                                
+                                <label htmlFor="fuse-ingredients-inputs">
+                                    <input 
+                                        className="Fuse_Ingredients"
+                                        key={i}
+                                        type="text" 
+                                        id="fuse-ingredients"
+                                        name="fuse_ingredients"
+                                        defaultValue={ingredient}
+                                        onChange={e => this.updateIngredients(e.currentTarget.value)}/>
+                                </label>
+
                                 </li>
                             );
                         })}
 
+                        <AddIngredients/>
                     </ul>
                     
                     <ErrorValidation
-                            value={this.state.validIngredients}
-                            message={this.state.errorType.ingredient_changes}/>
+                        message={this.state.errorType.ingredient_changes}/>
 
                 </div>
 
                 <div className="Edit_Steps">
+                    <img src={fryingpan} id="pan-fuse-icon" alt="frying pan"/>
+
                     <h2 id="step-title">Steps</h2>
 
                     <p id="step-instructor">Change or modify the recipe's steps:</p>
@@ -242,20 +264,26 @@ export default class RecipeEditor extends Component {
                         {starter_steps.map((step, i) => {
                             return (
                                 <li key={i}>
-                                    <textarea 
-                                        key={i}
-                                        id="fuse_steps"
-                                        name="fuse_steps"
-                                        rows="10"
-                                        defaultValue={step}
-                                        onChange={e => this.updateSteps(e.currentTarget.value)}/>
+                                    
+                                    <label htmlFor="fuse-steps-inputs">
+                                        <textarea 
+                                            className="Fuse_Steps"
+                                            key={i}
+                                            id="fuse-steps"
+                                            name="fuse_steps"
+                                            rows="10"
+                                            defaultValue={step}
+                                            onChange={e => this.updateSteps(e.currentTarget.value)}/>
+                                    </label>
+
                                 </li>
                             );
                         })}
+
+                        <AddSteps/>
                     </ol>
 
                     <ErrorValidation
-                        value={this.state.validSteps}
                         message={this.state.errorType.step_changes}/>
 
                 </div>

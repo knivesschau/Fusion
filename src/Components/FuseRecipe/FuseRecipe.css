@@ -1,10 +1,49 @@
+/* mobile styles first, min 320px */
 .Fusion_Form {
-    font-size: 1.15em;
     text-align: center;
 }
 
 #submit-recipe, #start-over {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-size: .90rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
     margin: .5em;
-    margin-bottom: 3em;
-    padding: .25em;
+    margin-top: -3em;
+    margin-bottom: 2em;
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: .75em;
+    transition: all .15s;
+}
+
+#submit-recipe:hover, #start-over:hover {
+    cursor: pointer; 
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#submit-recipe:active, #start-over:active {
+    background-color: #881600;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    #submit-recipe, #start-over {
+        font-size: 1.25rem;
+        margin-top: -.5em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #submit-recipe, #start-over {
+        font-size: 1.5rem;
+        margin-top: -.25em;
+    }
 }

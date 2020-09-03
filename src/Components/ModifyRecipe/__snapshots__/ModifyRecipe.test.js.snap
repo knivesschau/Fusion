@@ -1,3 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModifyRecipe Component Renders the complete ModifyRecipe Component and all nested Components 1`] = `<Fragment />`;
+exports[`ModifyRecipe Component Renders the complete ModifyRecipe Component and all nested Components 1`] = `
+<section
+  className="Modify_Recipe"
+>
+  <form
+    className="Modify_Form"
+    onSubmit={[Function]}
+  >
+    <ModifyViewer />
+    <button
+      id="submit-mod"
+      type="submit"
+    >
+      Modify Recipe
+    </button>
+    <button
+      id="cancel-mod"
+      onClick={[Function]}
+      type="reset"
+    >
+      Cancel
+    </button>
+  </form>
+</section>
+`;

@@ -1,7 +1,21 @@
+/* mobile styles first, min 320px */
 .Your_Cookbook {
-    font-size: 1.10em;
     text-align: center;
     margin: 2em;
+}
+
+.Welcome_Message {
+    font-size: 1rem;
+    background-color: rgb(252, 233, 217, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 1em;
+    padding: .10em;
+    box-shadow: inset -3px -2px 5px 0 white;
+    text-shadow: 3px 2px 2px white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -.5em;
+    margin-bottom: 1.5em;
 }
 
 ul {
@@ -10,5 +24,42 @@ ul {
 }
 
 #cookbook-home {
-    font-size: 1.75em;
+    color: white; 
+    text-shadow: 5px 3px 5px black;
+    font-size: 2rem;
+}
+
+/* tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+    .Welcome_Message {
+        font-size: 1.25rem;
+        padding: .5em;
+        margin-left: 3.5em;
+        margin-right: 3.5em;
+    }
+    
+    #cookbook-home {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Welcome_Message {
+        font-size: 1.5rem;
+        margin-left: 15em;
+        margin-right: 15em;
+        margin-top: -1em;
+    }
+
+    #cookbook-home {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Welcome_Message {
+        margin-left: 25em;
+        margin-right: 25em;
+        margin-top: -1.5em;
+    }
 }

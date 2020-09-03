@@ -1,9 +1,137 @@
+/* mobile styles first, min 320px */
 .Landing_Page {
     text-align: center;
-    font-size: 1em;
 }
 
 .Intro_Tagline, .Second_Tagline, .Third_Tagline {
-    border: 1px solid black;
-    margin: 2em;
+    margin-left: auto;
+    margin-right: auto; 
+    margin: 1.5em;
+    margin-bottom: 1.75em;
+    margin-top: -.5em;
+    background-color: rgb(190, 190, 190, .9);
+    border: 1px solid grey;
+    border-radius: 2em; 
+    box-shadow: inset -3px -2px 5px 0;
+    padding: .75em;
+}
+
+#app-title {
+    margin-top: .25em;
+    color: white; 
+    text-shadow: 6px 4px 5px black;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+#title-tag {
+    margin-top: -1.75em;
+    padding: .25em;
+    color: #F9D1B1;
+    border: 1px solid transparent;
+    border-radius: 5em;
+    text-shadow: 5px 3px 5px black;
+    font-size: 1.5rem;
+}
+
+#pitch1, #pitch2, #pitch3 {
+    font-size: 1.40rem;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+}
+
+#pitch1, #pitch3 {
+    margin-top: .10em;
+}
+
+#pitch2 {
+    margin-top: -.5em;
+}
+
+#tagline1, #tagline2, #tagline3 {
+    font-size: 1.10rem;
+    font-weight: 500;
+    margin-top: -.5em;
+    margin-left: .25em;
+    margin-right: .25em;
+}
+
+#chef-icon, #cookbook-icon, #oven-mitt-icon {
+    margin-top: -.25em;
+    height: 45%;
+    width: 45%;
+}
+
+/* tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+    .Intro_Tagline, .Second_Tagline, .Third_Tagline {
+        margin-left: 8em;
+        margin-right: 8em;
+        border-radius: 5em;
+        margin-bottom: 2.5em;
+    }
+
+    #app-title {
+        font-size: 4rem;
+    }
+
+    #title-tag {
+        font-size: 2rem;
+    }
+
+    #pitch1, #pitch2, #pitch3 {
+        font-size: 2rem;
+    }
+
+    #tagline1, #tagline2, #tagline3 {
+        font-size: 1.35rem;
+    }
+    
+    #chef-icon, #cookbook-icon, #oven-mitt-icon {
+        height: 25%;
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Intro_Tagline, .Second_Tagline, .Third_Tagline {
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+
+    #app-title {
+        font-size: 6rem;
+    }
+
+    #title-tag {
+        font-size: 3rem;
+    }
+
+    #pitch1, #pitch2, #pitch3 {
+        font-size: 2.5rem;
+        margin-top: .25em;
+    }
+
+    #tagline1, #tagline2, #tagline3 {
+        font-size: 1.65rem;
+        margin-top: -1em;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Intro_Tagline, .Second_Tagline, .Third_Tagline {
+        margin-left: 35em;
+        margin-right: 35em;
+    }
+
+    #pitch1, #pitch2, #pitch3 {
+        margin-top: -.25em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Intro_Tagline, .Second_Tagline, .Third_Tagline {
+        margin-left: 45em;
+        margin-right: 45em;
+    }
 }

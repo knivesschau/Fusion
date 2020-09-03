@@ -4,11 +4,19 @@ exports[`LoginPage Component Renders the complete LoginPage Component and all ne
 <section
   className="Login_Page"
 >
-  <h3>
-    Log In (Will Be Included in Final Version)
+  <img
+    alt="cooking pot"
+    id="cooking-pot-icon"
+    src="cooking-pot.png"
+  />
+  <h3
+    id="login-tag"
+  >
+    Log In
   </h3>
   <form
     className="Login_Form"
+    onSubmit={[Function]}
   >
     <label
       htmlFor="username"
@@ -45,5 +53,23 @@ exports[`LoginPage Component Renders the complete LoginPage Component and all ne
       Login
     </button>
   </form>
+  <div
+    className="Demo_Info"
+  >
+    <span
+      id="demo-user"
+    >
+      Demo User: thinkful2020!
+    </span>
+    <span
+      id="demo-pass"
+    >
+      Demo Password: GetC0ok1ng!
+    </span>
+  </div>
+  <ErrorValidation
+    id="login-error"
+    message={null}
+  />
 </section>
 `;

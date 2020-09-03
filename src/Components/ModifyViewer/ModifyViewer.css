@@ -1,32 +1,167 @@
-#modify-info { 
-    font-size: x-large;
+/* mobile styles first, min 320px */
+.Recipe_Modifier {
+    margin: 1em;
 }
 
 .Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
-    border: 1px solid black;
-    padding: .5em;
-    margin-bottom: 1em;
+    background-color: rgb(245, 245, 245, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 1em; 
+    box-shadow: inset -3px -2px 5px 0 black;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
 }
 
-.Mod_Error {
-    color: red;
-}
-
-#fuse_name_mod {
+.Mod_Ingredients {
+    margin: .45em;
     width: 90%;
 }
 
-#mod_ingredients {
+.Mod_Steps {
+    vertical-align: middle;
+    width: 80%;
     margin: .25em;
+}
+
+#modify-info { 
+    font-size: 1.75rem;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+}
+
+#date-display {
+    font-size: 1.25rem;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+    margin-top: -.5em;
+}
+
+#title-changer, #mod-ingredients-title, #mod-steps-title {
+    font-size: 1.10rem;
+    text-shadow: 3px 2px 2px white;
+    margin-top: .15em;
+}
+
+#cuisine-styles-mod-1, #cuisine-styles-mod-2 {
+    font-size: 1.15rem;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+    margin-top: -.5em;
+}
+
+#fuse-name-mod {
+    align-self: center;
     width: 90%;
+}
+
+#fuse-name-mod, #mod-ingredients, #mod-steps {
+    font-size: .90rem;
+    transition: border .3s ease-out; 
+}
+
+#fuse-name-mod:focus, #mod-ingredients:focus, #mod-steps:focus {
+    border: 10px solid #881600;
+    border-style: none none none solid;
+    background-color: white;
 }
 
 #mod-steps-list {
     padding-left: 1em;
 }
 
-#mod_steps {
-    vertical-align: middle;
-    width: 80%;
-    margin: .25em;
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
+        margin-left: 8.5em;
+        margin-right: 8.5em;
+        padding: 1.75em;
+    }
+
+    .Mod_Ingredients {
+        margin: .5em;
+        width: 95%;
+        padding: .25em;
+    }
+    
+    .Mod_Steps {
+        width: 80%;
+        margin: .5em;
+    }
+
+    #fuse-name-mod {
+        padding: .5em;
+    }
+
+    #title-changer, #mod-ingredients-title, #mod-steps-title {
+        font-size: 1.5rem;
+        margin-bottom: .25em;
+    }
+
+    #mod-steps-list {
+        font-size: 1.25rem;
+    }
+
+    #fuse-name-mod, #mod-ingredients, #mod-steps {
+        font-size: 1.10rem;
+    }
+
+    #modify-info {
+        font-size: 2.5rem;
+    }
+
+    #date-display {
+        font-size: 1.5rem;
+        margin-top: -1em;
+    }
+
+    #cuisine-styles-mod-1, #cuisine-styles-mod-2 {
+        font-size: 1.35rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+
+    .Mod_Ingredients {
+        padding: .5em;
+    }
+
+    #modify-info {
+        font-size: 3rem;
+    }
+
+    #date-display {
+        font-size: 2rem;
+    }
+
+    #cuisine-styles-mod-1, #cuisine-styles-mod-2, #title-changer, #mod-ingredients-title, #mod-steps-title {
+        font-size: 1.75rem;
+    }
+    
+    #mod-steps-list {
+        font-size: 1.5em;
+    }
+
+    #fuse-name-mod, #mod-ingredients, #mod-steps {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
+        margin-left: 30em;
+        margin-right: 30em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Title_Modifier, .Ingredient_Modifier, .Steps_Modifier {
+        margin-left: 40em;
+        margin-right: 40em;
+    }
 }

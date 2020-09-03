@@ -15,7 +15,12 @@ export default class ViewCookbook extends Component {
                 
                 <h1 id="cookbook-home">Your Cookbook</h1>
 
+                <div className="Welcome_Message">
+                    <span id="welcome">Welcome! Look at your recipes below, or click "Fuse" to make one!</span>
+                </div>
+
                 <ul>
+                    {/* pass through context to RecipeInfo Component via props */}
                     {fusions.map(fusion =>
                         <li key={fusion.fused_id}>
                             <RecipeInfo

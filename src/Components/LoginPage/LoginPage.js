@@ -1,14 +1,59 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import TokenService from '../../services/token-services';
+import AuthApiService from '../../services/auth-api-service';
+import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
+import cookingpot from '../../images/cooking-pot.png';
 import './LoginPage.css';
 
 export default class LoginPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {error: null};
+    };
+    
+    static defaultProps = {
+        onValidLogin: () => {}
+    };
+
+    // handle POST request on client for user logins
+    handleJwtLoginAuth = e => {
+        e.preventDefault();
+
+        const {return_username, return_password} = e.target;
+
+        this.setState({
+            error: null
+        });
+
+        AuthApiService.postLogin({
+            user_name: return_username.value,
+            password: return_password.value
+        })
+            .then(res => {
+                return_username.value = '';
+                return_password.value = '';
+                TokenService.saveAuthToken(res.authToken);
+                this.props.onValidLogin();
+            })
+            .then(() => {
+                window.location="/your-cookbook";
+            })
+            .catch(res => {
+                this.setState({
+                    error: "Invalid username or password. Please double-check your crendentials and try again."
+                });
+            });
+    };
+    
     render() {
         return (
             <section className="Login_Page">
                 
-                <h3>Log In (Will Be Included in Final Version)</h3>
+                <img src={cookingpot} id="cooking-pot-icon" alt="cooking pot"/>
 
-                <form className="Login_Form">
+                <h3 id="login-tag">Log In</h3>
+
+                <form className="Login_Form" onSubmit={this.handleJwtLoginAuth}>
                     
                     <label htmlFor="username">
                         <p id="return-user">Username:</p>
@@ -23,6 +68,13 @@ export default class LoginPage extends Component {
                     <button type="submit" id="user-login">Login</button>
 
                 </form>
+
+                <div className="Demo_Info">
+                    <span id="demo-user">Demo User: thinkful2020!</span>
+                    <span id="demo-pass">Demo Password: GetC0ok1ng!</span>
+                </div>
+
+                <ErrorValidation id="login-error" message={this.state.error}/>
 
             </section>
         );

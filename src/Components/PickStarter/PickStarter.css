@@ -1,10 +1,126 @@
+/* mobile styles first, min 320px */
 .Starter_Recipes {
     text-align: center;
-    border: 1px solid black;
+    background-color: rgb(245, 245, 245, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 2em; 
     margin: 2em;
 }
 
 #starter-recipes {
+    display: inline-block;
     text-align: left;
-    padding-left: 1em;
+    margin-top: -1em;
+    margin-left: 1.25em;
+}
+
+#starting-link {
+    font-size: 1rem;
+    color: black;
+    text-shadow: 3px 2px 2px white;;
+}
+
+#starting-link:hover {
+    cursor: pointer; 
+    text-decoration: underline;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+}
+
+#starting-link:active {
+    color: #9e6a7e;
+    text-shadow: 3px 2px 2px white;
+}
+
+#begin-fuse {
+    font-size: 1.75rem;
+    text-shadow: 3px 2px 2px white;
+}
+
+#select-recipe {
+    font-size: 1.10rem;
+    margin-top: -.5em;
+    color: #597246;
+    text-shadow: 0px 0px 0px black;
+}
+
+#rolling-pin-icon {
+    height: 45%;
+    width: 45%;
+    margin-bottom: -2em;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .Starter_Recipes {
+        margin-left: 8em; 
+        margin-right: 8em;
+        margin-top: 3em;
+        padding: .5em;
+    }
+
+    #starter-recipes {
+        padding-left: 2.5em;
+    }
+
+    #begin-fuse {
+        font-size: 2.5rem;
+        margin-bottom: .5em;
+    }
+
+    #select-recipe {
+        font-size: 1.75rem;
+        margin-bottom: .25em;
+    }
+
+    #starting-link {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    
+    #rolling-pin-icon {
+        height: 30%;
+        width: 30%;
+        margin-bottom: -3em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Starter_Recipes {
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+
+    #begin-fuse {
+        font-size: 3rem;
+    }
+
+    #rolling-pin-icon {
+        height: 25%;
+        width: 25%;
+    }
+
+    #starting-link {
+        font-size: 1.75rem;
+    }
+
+    #select-recipe {
+        font-size: 1.90rem;
+        margin-top: .25em;
+        margin-bottom: .25em;
+    }
+} 
+
+@media only screen and (min-width: 1600px) {
+    .Starter_Recipes {
+        margin-left: 30em;
+        margin-right: 30em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Starter_Recipes {
+        margin-left: 40em;
+        margin-right: 40em;
+    }
 }

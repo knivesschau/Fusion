@@ -17,13 +17,15 @@ exports[`LandingPage Component Renders the complete LandingPage Component and al
     >
       Let Your Inner Chef Out!
     </h2>
-    <h3>
-      Note: This version is static and its main purpose is to gather feedback about the basic design, flow and concept. At this time, some buttons and links will not be fully interactive.
-    </h3>
   </header>
   <div
     className="Intro_Tagline"
   >
+    <img
+      alt="chef"
+      id="chef-icon"
+      src="chef.png"
+    />
     <h3
       id="pitch1"
     >
@@ -38,6 +40,11 @@ exports[`LandingPage Component Renders the complete LandingPage Component and al
   <div
     className="Second_Tagline"
   >
+    <img
+      alt="cookbook"
+      id="cookbook-icon"
+      src="cookbook.png"
+    />
     <h3
       id="pitch2"
     >
@@ -46,12 +53,17 @@ exports[`LandingPage Component Renders the complete LandingPage Component and al
     <p
       id="tagline2"
     >
-      Want to adjust the measurements of a dish or use ingredients from another cooking style? Fusion makes it easy! Fuse and experiment with 10 starter recipes across 5 delicious cuisines and save your modifications to your personal recipe book. Who knew cooking could be so much fun?
+      Want to adjust the measurements of a dish or use ingredients from another cooking style? Fusion makes it easy! Fuse and experiment with 14 starter recipes across 7 delicious cuisines and save your modifications to your personal recipe book. Who knew cooking could be so much fun?
     </p>
   </div>
   <div
     className="Third_Tagline"
   >
+    <img
+      alt="oven-mitt"
+      id="oven-mitt-icon"
+      src="oven-mitt.png"
+    />
     <h3
       id="pitch3"
     >

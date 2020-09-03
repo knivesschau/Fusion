@@ -8,6 +8,11 @@ exports[`PickStarter Component Renders the complete PickStarter Component and al
     <div
       className="Starter_Recipes"
     >
+      <img
+        alt="rolling pin"
+        id="rolling-pin-icon"
+        src="rolling-pin.png"
+      />
       <h1
         id="begin-fuse"
       >

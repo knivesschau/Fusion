@@ -13,22 +13,41 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
     <div
       className="Title_Editor"
     >
-      <h1>
-        Enter A New Recipe Title:
-      </h1>
-      <input
-        name="fuse_name"
+      <img
+        alt="oven mitt"
+        id="mitt-fuse-icon"
+        src="oven-mitt.png"
       />
+      <h2
+        id="title-instructor"
+      >
+        Enter a New Recipe Title:
+      </h2>
+      <label
+        htmlFor="name-changer-input"
+      >
+        <input
+          id="name-changer"
+          name="fuse_name"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <ErrorValidation />
     </div>
     <div
       className="Fuse_Cuisine"
     >
-      <p
+      <img
+        alt="cookbook"
+        id="cookbook-fuse-icon"
+        src="cookbook.png"
+      />
+      <h2
         id="cuisine-info"
       >
         Your starting culinary style is: 
-         
-      </p>
+      </h2>
       <input
         name="base_cuisine"
         type="hidden"
@@ -37,59 +56,107 @@ exports[`RecipeEditor Component Renders the complete RecipeEditor Component and 
         htmlFor="cuisines"
         name="fuse_cuisine"
       >
-        Select your second cuisine:
-      </label>
-      <select
-        name="fuse_cuisine"
-      >
-        <option
-          key=""
+        <p
+          id="select-cuisine"
         >
-          --Select One--
-        </option>
-      </select>
+           Select your "Fusion" style (or, select "None"): 
+        </p>
+        <select
+          id="fusion-cuisine"
+          name="fuse_cuisine"
+          required={true}
+        >
+          <option
+            value=""
+          >
+            --Select One--
+          </option>
+        </select>
+      </label>
     </div>
     <div
       className="Edit_Ingredients"
     >
-      <h2>
+      <img
+        alt="flour sack"
+        id="flour-fuse-icon"
+        src="flour-sack.png"
+      />
+      <h2
+        id="ingredient-title"
+      >
         Ingredients
       </h2>
-      <ul>
+      <p
+        id="ingredient-instructor"
+      >
+        Change or modify the recipe's ingredients:
+      </p>
+      <ul
+        id="edit-list-ingredients"
+      >
         <li
           key="0"
         >
-          <input
-            defaultValue=""
-            id="edit-ingredients"
-            key="0"
-            name="fuse_steps"
-            onChange={[Function]}
-            type="text"
-          />
+          <label
+            htmlFor="fuse-ingredients-inputs"
+          >
+            <input
+              className="Fuse_Ingredients"
+              defaultValue=""
+              id="fuse-ingredients"
+              key="0"
+              name="fuse_ingredients"
+              onChange={[Function]}
+              type="text"
+            />
+          </label>
         </li>
+        <AddIngredients />
       </ul>
+      <ErrorValidation />
     </div>
     <div
       className="Edit_Steps"
     >
-      <h2>
+      <img
+        alt="frying pan"
+        id="pan-fuse-icon"
+        src="frying-pan.png"
+      />
+      <h2
+        id="step-title"
+      >
         Steps
       </h2>
-      <ol>
+      <p
+        id="step-instructor"
+      >
+        Change or modify the recipe's steps:
+      </p>
+      <ol
+        id="edit-list-steps"
+      >
         <li
           key="0"
         >
-          <textarea
-            defaultValue=""
-            id="edit-steps"
-            key="0"
-            name="fuse_ingredients"
-            onChange={[Function]}
-            rows="10"
-          />
+          <label
+            htmlFor="fuse-steps-inputs"
+          >
+            <textarea
+              className="Fuse_Steps"
+              defaultValue=""
+              id="fuse-steps"
+              key="0"
+              name="fuse_steps"
+              onChange={[Function]}
+              rows="10"
+            />
+          </label>
         </li>
+        <AddSteps />
       </ol>
+      <ErrorValidation />
     </div>
   </section>
 </Fragment>

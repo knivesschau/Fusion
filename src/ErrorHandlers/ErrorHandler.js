@@ -19,7 +19,8 @@ export default class ErrorHandler extends Component {
             return (
                 <main className="error-catcher">
                     <h1>
-                        An unexpected error occurred. Please refresh the page. If the error persists, please try again later. 
+                        An unexpected error occurred. This could be due to an expired session or server error. Either refresh
+                        the page, or try logging in again. If the error persits, please try again later.
                     </h1>
                 </main>
             );

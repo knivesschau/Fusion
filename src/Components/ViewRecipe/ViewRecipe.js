@@ -23,6 +23,7 @@ export default class ViewRecipe extends Component {
 
         return (
             <section className="Recipe_Viewer">
+                {/* pass down fused recipe info to Recipe Component via props */}
                 <Recipe
                     fused_id={fusionRecipe.fused_id}
                     fused_name={fusionRecipe.fused_name}

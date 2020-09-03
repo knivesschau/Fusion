@@ -1,0 +1,88 @@
+/* mobile styles first, min 320px */
+#add-ingredient {
+    font-size: .90rem;
+    margin-top: 1.5em;
+}
+
+#add-ingredient {
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#remove-ingredient {
+    background-color: #fac59d;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#add-ingredient:hover, #remove-ingredient:hover {
+    cursor: pointer; 
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#add-ingredient:active, #remove-ingredient:active {
+    background-color: #881600;
+}
+
+#remove-ingredient {
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+#fuse-ingredients-add {
+    font-size: .90rem;
+    transition: border .3s ease-out; 
+    width: 90%;
+    margin: .45em;
+}
+
+#fuse-ingredients-add:focus {
+    border: 10px solid #881600;
+    border-style: none none none solid;
+    background-color: white;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    #add-ingredient {
+        font-size: 1.25rem;
+        padding-top: .35em;
+        padding-bottom: .35em;
+        margin-top: .5em;
+    }
+
+    #remove-ingredient {
+        font-size: 1rem;
+        padding-top: .25em;
+        padding-bottom: .25em;
+    }
+
+    #fuse-ingredients-add {
+        width: 95%;
+        margin: .5em;
+        padding: .25em;
+        font-size: 1.10rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #add-ingredient {
+        font-size: 1.45rem;
+    }
+
+    #remove-ingredient {
+        font-size: 1.15rem;
+    }
+
+    #fuse-ingredients-add {
+        font-size: 1.25rem;
+        padding: .5em;
+    }
+}

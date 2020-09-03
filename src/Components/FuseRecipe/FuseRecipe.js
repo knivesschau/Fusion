@@ -2,19 +2,10 @@ import React, { Component } from 'react';
 import config from '../../config';
 import fusionContext from '../../fusionContext';
 import RecipeEditor from '../RecipeEditor/RecipeEditor';
+import TokenService from '../../services/token-services';
 import './FuseRecipe.css';
 
 export default class FuseRecipe extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            ...props 
-        };
-
-        this.baseState = this.state;
-    };
-    
     static defaultProps = {
         match: {
             params: {}
@@ -24,13 +15,13 @@ export default class FuseRecipe extends Component {
         },
     };
 
-    handleResetClick = () => {
-        this.setState(this.baseState);
-        window.alert("Recipe reset! All steps and ingredients have been reset to their original instructions.")
+    handleCancelClick = () => {
+        window.location='/starter-recipes'
     };
 
     static contextType = fusionContext;
 
+    // handle POST requests of user-fused recipes 
     handleSubmit = (e) => {
         e.preventDefault();
 
@@ -46,7 +37,8 @@ export default class FuseRecipe extends Component {
         fetch(`${config.API_ENDPOINT}/recipes`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                "content-type": "application/json",
+                "authorization": `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(newRecipe)
         })
@@ -74,6 +66,7 @@ export default class FuseRecipe extends Component {
             <section className="Fuse_Recipe">
 
                 <form className="Fusion_Form" onSubmit={this.handleSubmit}>
+                {/* pass all starter recipe data to RecipeEditor Component via props */}
                     <RecipeEditor
                         recipe_id={baseRecipe.recipe_id}
                         base_name={baseRecipe.base_name}
@@ -83,7 +76,7 @@ export default class FuseRecipe extends Component {
                         cuisine_id={baseRecipe.cuisine_id}/>
 
                     <button type="submit" id="submit-recipe">Save Recipe</button>
-                    <button type="reset" onClick={this.handleResetClick} id="start-over">Start Over</button>
+                    <button type="reset" onClick={this.handleCancelClick} id="start-over">Cancel</button>
                 </form>
 
             </section>

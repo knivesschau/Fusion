@@ -1,3 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModifyViewer Component Renders the complete ModifyViewer Component and all nested Components 1`] = `<Fragment />`;
+exports[`ModifyViewer Component Renders the complete ModifyViewer Component and all nested Components 1`] = `
+<Fragment>
+  <section
+    className="Recipe_Modifier"
+  >
+    <h1
+      id="modify-info"
+    >
+      Modifying: 
+    </h1>
+    <h2
+      id="date-display"
+    >
+      Last Modified: 
+      Invalid Date
+    </h2>
+    <h3
+      id="cuisine-styles-mod-2"
+    >
+      , 
+    </h3>
+    <div
+      className="Title_Modifier"
+    >
+      <img
+        alt="oven mitt"
+        id="mitt-fuse-icon"
+        src="oven-mitt.png"
+      />
+      <h2
+        id="title-changer"
+      >
+        Change Your Recipe Title:
+      </h2>
+      <label
+        htmlFor="fuse-name-input"
+      >
+        <input
+          id="fuse-name-mod"
+          name="fuse_name_mod"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <ErrorValidation />
+    </div>
+    <div
+      className="Ingredient_Modifier"
+    >
+      <img
+        alt="flour sack"
+        id="flour-fuse-icon"
+        src="flour-sack.png"
+      />
+      <h2
+        id="mod-ingredients-title"
+      >
+        Ingredients
+      </h2>
+      <p
+        id="ingredient-instructor"
+      >
+        Change or modify the recipe's ingredients:
+      </p>
+      <ul
+        id="mod-ingredients-list"
+      >
+        <li
+          key="0"
+        >
+          <label
+            htmlFor="mod-ingredient-inputs"
+          >
+            <input
+              className="Mod_Ingredients"
+              defaultValue=""
+              id="mod-ingredients"
+              key="0"
+              name="mod_ingredients"
+              onChange={[Function]}
+              type="text"
+            />
+          </label>
+        </li>
+        <AddModIngredients />
+      </ul>
+      <ErrorValidation />
+    </div>
+    <div
+      className="Steps_Modifier"
+    >
+      <img
+        alt="frying pan"
+        id="pan-fuse-icon"
+        src="frying-pan.png"
+      />
+      <h2
+        id="mod-steps-title"
+      >
+        Steps
+      </h2>
+      <p
+        id="step-instructor"
+      >
+        Change or modify the recipe's steps:
+      </p>
+      <ol
+        id="mod-steps-list"
+      >
+        <li
+          key="0"
+        >
+          <label
+            htmlFor="mod-steps-inputs"
+          >
+            <textarea
+              className="Mod_Steps"
+              defaultValue=""
+              id="mod-steps"
+              key="0"
+              name="mod_steps"
+              onChange={[Function]}
+              rows="10"
+            />
+          </label>
+        </li>
+        <AddModSteps />
+      </ol>
+      <ErrorValidation />
+    </div>
+  </section>
+</Fragment>
+`;

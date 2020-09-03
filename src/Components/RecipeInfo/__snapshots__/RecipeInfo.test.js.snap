@@ -11,6 +11,11 @@ exports[`RecipeInfo Component Renders the complete RecipeInfo Component and all 
       id="Recipe_MiniInfo"
       to="/view-recipe/undefined"
     >
+      <img
+        alt="chef hat"
+        id="chef-hat-icon"
+        src="chef-hat.png"
+      />
       <h2
         id="recipe-name"
       />
@@ -18,7 +23,7 @@ exports[`RecipeInfo Component Renders the complete RecipeInfo Component and all 
     <h3
       id="recipe-created"
     >
-      Recipe created on: 
+      Created On: 
       Invalid Date
     </h3>
     <h4

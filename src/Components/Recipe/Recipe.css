@@ -1,16 +1,46 @@
-.RecipeMain {
-    font-size: 1.10em;
+/* mobile styles first, min 320px */
+.Recipe_Expand {
+    background-color: rgb(245, 245, 245, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 2em; 
+    box-shadow: inset -3px -2px 5px 0 black;
+    text-align: center;
+    margin: 1.5em;
+    margin-top: 1.5em;
+    padding: .35em;
 }
 
-.Recipe_Expand {
-    text-align: center;
-    border: 1px solid black;
-    margin: 1.5em;
+#recipe-container {
+    height: 25%;
+    overflow-y: scroll;
+}
+
+#recipe-title {
+    font-size: 1.2rem;
+    text-shadow: 3px 2px 2px white;
+    margin-top: 1em;
+}
+
+#cuisine-styles-single, #cuisine-styles-both, #date-changed {
+    text-shadow: 3px 2px 2px white;
+    font-size: 1.10rem;
+}
+
+#cuisine-styles-single, #cuisine-styles-both {
+    margin-bottom: -.5em;
+}
+
+#ingredients-title, #steps-title {
+    font-size: 1.10rem;
+    text-decoration: underline; 
+    text-shadow: 3px 2px 2px white;
+    margin-bottom: -.5em;
 }
 
 #ingredients-list {
-    padding-left: 0em;
-    margin: .5em;
+    text-align: left;
+    padding-left: .5em;
+    margin: .65em;
 }
 
 #steps-list {
@@ -18,13 +48,129 @@
     margin: 1em;
 }
 
-#display-steps {
-    padding-left: .75em;
+#display-ingredients, #display-steps {
+    font-size: 1.10rem;
+    font-weight: 500;
 }
 
-#modify-recipe, #delete-recipe, #modify-recipe2, #delete-recipe2 {
-   font-size: 1em;
-   margin-left: auto;
-   margin-right: auto;
-   margin: .5em;
+#display-steps {
+    padding-left: 1em;
+}
+
+#modify-recipe, #delete-recipe {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-size: .90rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin: .5em;
+    margin-top: -.25em;
+    margin-bottom: -.5em;
+    padding: 7px 25px;
+    border: 1px solid black;
+    border-radius: .75em;
+    transition: all .15s;
+}
+
+#modify-recipe:hover, #delete-recipe:hover {
+    cursor: pointer;
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#modify-recipe:active, #delete-recipe:active {
+    background-color: #881600;
+}
+
+#cookbook-recipe-icon {
+    height: 45%; 
+    width: 45%;
+    margin-bottom: -2em;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .Recipe_Expand {
+        margin-left: 5em;
+        margin-right: 5em;
+        border-radius: 3em;
+        margin-top: 2.5em;
+    }
+
+    #recipe-title {
+        font-size: 2rem;
+        margin-top: .25em;
+        margin-bottom: .25em;
+    }
+
+    #cuisine-styles-single, #cuisine-styles-both, #date-changed {
+        font-size: 1.5rem;
+        margin-top: .5em;
+    }
+
+    #ingredients-title, #steps-title {
+        font-size: 1.5rem;
+    }
+
+    #display-ingredients, #display-steps {
+        font-size: 1.35rem;
+    }
+
+    #modify-recipe, #delete-recipe {    
+        font-size: 1.25rem;
+    }
+
+    #display-ingredients {
+       display: inline-block;
+       text-align: center;
+       margin-bottom: -1em;
+    }
+
+    #ingredients-list {
+        text-align: left;
+    }
+    
+    #cookbook-recipe-icon {
+        height: 25%; 
+        width: 25%;
+    }   
+}
+
+@media only screen and (min-width: 1200px) {
+    .Recipe_Expand {
+        margin-left: 15em;
+        margin-right: 15em;
+        margin-top: 3.5em;
+    }
+
+    #recipe-title {
+        font-size: 2.5rem;
+    }
+
+    #cuisine-styles-single, #cuisine-styles-both, #date-changed, #ingredients-title, #steps-title {
+        font-size: 1.75rem;
+    }
+
+    #modify-recipe, #delete-recipe, #display-ingredients, #display-steps {
+        font-size: 1.5rem;
+    }
+} 
+
+@media only screen and (min-width: 1600px) {
+    .Recipe_Expand {
+        margin-left: 30em;
+        margin-right: 30em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Recipe_Expand {
+        margin-left: 35em;
+        margin-right: 35em;
+    }
 }
