@@ -1,68 +1,75 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Fusion App (Client)
 
-In the project directory, you can run:
+<a href="https://fusion-app.vercel.app//">Live Demo (Client)</a> 
+<br>
+<a href="https://github.com/knivesschau/Fusion">Client Repo</a>
+<br>
+<a href="https://github.com/knivesschau/Fusion_API">API Server</a>
+<br>
+<a href="https://afternoon-anchorage-79162.herokuapp.com/">Heroku API Server</a>
 
-### `npm start`
+Fusion is an online recipe book tailor-made for chefs at all levels, allowing them to create and save recipe modifications, substitutions, and tweaks to their favorite culinary dishes. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Image and Recipe Acknowledgements
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This app uses free vectors and images designed or hosted by FreePik. Specific image sources are listed below: 
 
-### `npm test`
+<a href="https://www.freepik.com/photos/background">Background photo created by freepik - www.freepik.com</a>
+<br>
+<a href="https://www.freepik.com/vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All starting recipes for Fusion were sourced and took inspiration from ones hosted at <a href="https://www.allrecipes.com/">All Recipes</a>. This app was created primarily for educational and recreational purposes and does not seek a profit from it. 
 
-### `npm run build`
+## API Endpoints
+```
+GET (All recipes by user logged in)
+  - /api/recipes 
+  - /api/recipes/:fused_id 
+```
+```
+GET (Starting recipe and cuisine data)
+  - /api/bases (Starting Recipes)
+  - /api/bases/:recipe_id 
+  - /api/cuisines (Culinary Styles)
+  - /api/cuisines/:culinary_id 
+```
+```
+POST, DELETE, AND PATCH
+  - /api/recipes/:fused_id 
+```
+```
+USERS AND AUTHENTICATION
+  - /api/users (Registration)
+  - /api/auth/login (Login)
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
+- ReactJS (Client)
+- JSX (Client)
+- CSS (Client)
+- Express (Server)
+- Node.JS (Server)
+- Knex (Server)
+- PostgreSQL (Server)
+- Jest (Client Testing)
+- Enzyme (Client Testing)
+- Mocha (Server Testing)
+- Chai (Server Testing)
+- Supertest (Server Testing)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Screenshots (Mobile)
+<img src="https://user-images.githubusercontent.com/54642928/92090789-b8326d80-ed84-11ea-84e3-14e51a789d19.png" width="35%">
+<img src="https://user-images.githubusercontent.com/54642928/92090793-b9fc3100-ed84-11ea-88d9-5ece8b7e62e9.png" width="35%">
+<img src="https://user-images.githubusercontent.com/54642928/92090776-b5d01380-ed84-11ea-80df-ad325b309faf.png" width="35%">
+<img src="https://user-images.githubusercontent.com/54642928/92090779-b7014080-ed84-11ea-8473-bdbec2ca5975.png" width="35%">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots (Desktop)
+<img src="https://user-images.githubusercontent.com/54642928/92090781-b7014080-ed84-11ea-8ffb-41b37091e97b.png" width="70%">
+<img src="https://user-images.githubusercontent.com/54642928/92090762-b072c900-ed84-11ea-8a07-3ada850dc036.png" width="70%">
+<img src="https://user-images.githubusercontent.com/54642928/92090791-b8cb0400-ed84-11ea-997b-ebcde2b02668.png" width="70%">
+<img src="https://user-images.githubusercontent.com/54642928/92090778-b668aa00-ed84-11ea-9634-72b4d54d8bc3.png" width="70%">
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Concept Wire Frame 
+<img src="https://user-images.githubusercontent.com/54642928/92093961-c5515b80-ed88-11ea-8497-a7e7cc13730a.png" width="70%">
