@@ -42,16 +42,9 @@
     margin-bottom: .25em;
 }
 
-#return-app-user, #user-password {
-    transition: border .3s ease-out; 
+#return-app-user, #user-password { 
     padding: .25em;
     width: 70%;
-}
-
-#return-app-user:focus, #user-password:focus {
-    border: 10px solid #881600;
-    border-style: none none none solid;
-    background-color: white;
 }
 
 #user-login {
