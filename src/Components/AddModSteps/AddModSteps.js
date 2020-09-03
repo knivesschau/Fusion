@@ -8,19 +8,18 @@ export default function AddModSteps() {
     function createInputs() {
         return modSteps.step.map((step, i) => 
             <ul id="add-mod-steps-list">
-                <li id="add-mod-steps" key={i}>
-
+                <li id="mod-steps" key={i}>
                     <label htmlFor="add-mod-steps-inputs">
                         <textarea
                             required
                             className="AddMod_Steps"
                             rows="10"
-                            id={`mod-steps-add-${i}`}
+                            id="mod-steps-add"
                             name="mod_steps"
+                            placeholder="Type additional step here"
                             value={step || ""}
                             onChange={handleUpdate.bind(i)}/>
                     </label>
-
                     <button type="button" id="remove-mod-step" onClick={removeInput.bind({i})}>Remove</button>
                 </li>
             </ul>
@@ -54,7 +53,7 @@ export default function AddModSteps() {
     return (
         <>
         {createInputs()}
-        <button type="button" id="add-mod-steps" onClick={addInput}>Add Step</button>
+        <button type="button" id="add-mod-step" onClick={addInput}>Add Step</button>
         </>
     );
 };

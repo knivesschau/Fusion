@@ -1,0 +1,78 @@
+/* mobile styles first, min 320px */
+#add-mod-step {
+    font-size: .90rem;
+    margin-top: 1.5em;
+}
+
+#add-mod-step {
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#remove-mod-step {
+    background-color: #fac59d;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#add-mod-step:hover, #remove-mod-step:hover {
+    cursor: pointer; 
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#add-mod-step:active, #remove-mod-step:active {
+    background-color: #881600;
+}
+
+#remove-mod-step {
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+#mod-steps-add {
+    vertical-align: middle;
+    width: 80%;
+    margin: .25em;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    #add-mod-step {
+        font-size: 1.25rem;
+        padding-top: .35em;
+        padding-bottom: .35em;
+        margin-top: .25em;
+    }
+    
+    #remove-mod-step {
+        font-size: 1rem;
+        margin: 1em;
+        padding-top: .25em;
+        padding-bottom: .25em;
+    }
+
+    #mod-steps-add {
+        font-size: 1.10rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #add-mod-step {
+        font-size: 1.45rem;
+    }
+    
+    #remove-mod-step {
+        font-size: 1.15rem;
+    }
+
+    #mod-steps-add {
+        font-size: 1.25rem;
+    }
+} 

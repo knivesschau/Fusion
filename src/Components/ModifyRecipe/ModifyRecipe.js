@@ -6,16 +6,6 @@ import TokenService from '../../services/token-services';
 import './ModifyRecipe.css';
 
 export default class ModifyRecipe extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            ...props 
-        };
-
-        this.baseState = this.state;
-    };
-    
     static defaultProps = {
         match: {
             params: {}
@@ -24,9 +14,8 @@ export default class ModifyRecipe extends Component {
 
     static contextType = fusionContext; 
 
-    handleResetClick = () => {
-        this.setState(this.baseState);
-        window.alert("Recipe reset! All steps and ingredients have been reset to their original modifications.")
+    handleCancelClick = () => {
+        window.location='/your-cookbook'
     };
 
     // handle PATCH requests of user-fused recipes
@@ -85,7 +74,7 @@ export default class ModifyRecipe extends Component {
                         fuse_cuisine={fuseRecipe.fuse_cuisine}/>
 
                     <button type="submit" id="submit-mod">Modify Recipe</button>
-                    <button type="reset" onClick={this.handleResetClick} id="restart-mod">Start Over</button>
+                    <button type="reset" onClick={this.handleCancelClick} id="cancel-mod">Cancel</button>
                 </form>
 
             </section> 

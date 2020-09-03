@@ -3,6 +3,9 @@ import fusionContext from '../../fusionContext';
 import AddModIngredients from '../AddModIngredients/AddModIngredients';
 import AddModSteps from '../AddModSteps/AddModSteps';
 import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
+import floursack from '../../images/flour-sack.png';
+import fryingpan from '../../images/frying-pan.png';
+import ovenmitt from '../../images/oven-mitt.png';
 import './ModifyViewer.css';
 
 export default class ModifyViewer extends Component {
@@ -180,11 +183,14 @@ export default class ModifyViewer extends Component {
                 {this.renderCuisines()}
 
                 <div className="Title_Modifier">
+                    <img src={ovenmitt} id="mitt-fuse-icon" alt="oven mitt"/>
+
                     <h2 id="title-changer">Change Your Recipe Title:</h2>
                     
                     <label htmlFor="fuse-name-input">
                         <input 
-                            id="fuse_name_mod" 
+                            type="text"
+                            id="fuse-name-mod" 
                             name="fuse_name_mod" 
                             defaultValue={fused_name}
                             onChange={e => this.editRecipeName(e.target.value)}/>
@@ -195,7 +201,9 @@ export default class ModifyViewer extends Component {
                 </div>
 
                 <div className="Ingredient_Modifier">
-                    <h2 id="mod-ingredients">Ingredients</h2>
+                    <img src={floursack} id="flour-fuse-icon" alt="flour sack"/>
+
+                    <h2 id="mod-ingredients-title">Ingredients</h2>
 
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
 
@@ -209,7 +217,7 @@ export default class ModifyViewer extends Component {
                                         className="Mod_Ingredients"
                                         key={i}
                                         type="text" 
-                                        id={`mod-ingredients-${i}`}
+                                        id="mod-ingredients"
                                         name="mod_ingredients"
                                         defaultValue={ingredient}
                                         onChange={e => this.editIngredients(e.currentTarget.value)}/>
@@ -228,7 +236,9 @@ export default class ModifyViewer extends Component {
                 </div>
 
                 <div className="Steps_Modifier">
-                    <h2 id="mod-steps">Steps</h2>
+                    <img src={fryingpan} id="pan-fuse-icon" alt="frying pan"/>
+
+                    <h2 id="mod-steps-title">Steps</h2>
 
                     <p id="step-instructor">Change or modify the recipe's steps:</p>
 
@@ -241,7 +251,7 @@ export default class ModifyViewer extends Component {
                                         <textarea 
                                             className="Mod_Steps"
                                             key={i}
-                                            id={`mod-steps-${i}`}
+                                            id="mod-steps"
                                             name="mod_steps"
                                             rows="10" 
                                             defaultValue={step}

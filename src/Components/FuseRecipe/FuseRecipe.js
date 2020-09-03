@@ -6,16 +6,6 @@ import TokenService from '../../services/token-services';
 import './FuseRecipe.css';
 
 export default class FuseRecipe extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            ...props,
-        };
-
-        this.baseState = this.state;
-    };
-    
     static defaultProps = {
         match: {
             params: {}
@@ -26,7 +16,6 @@ export default class FuseRecipe extends Component {
     };
 
     handleCancelClick = () => {
-        this.setState(this.baseState);
         window.location='/starter-recipes'
     };
 

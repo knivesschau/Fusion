@@ -11,19 +11,17 @@ export default function AddModIngredients() {
         return modIngredients.ingredient.map((ingredient, i) => 
             <ul id="add-mod-ingredients-list">
                 <li id="add-mod-ingredients" key={i}>
-                    
                     <label htmlFor="add-mod-ingredients-inputs">
                         <input
                             required
                             className="AddMod_Ingredients"
                             type="text"
-                            id={`mod-ingredients-add-${i}`}
+                            id="mod-ingredients-add"
                             name="mod_ingredients"
-                            value={ingredient || ""}
                             placeholder="Enter new ingredient here"
+                            value={ingredient || ""}
                             onChange={handleUpdate.bind(i)}/>
                     </label>
-
                     <button type="button" id="remove-mod-ingredient" onClick={removeInput.bind({i})}>Remove</button>
                 </li>
             </ul>

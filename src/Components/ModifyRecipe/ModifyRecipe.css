@@ -1,10 +1,49 @@
+/* mobile styles first, min 320px */
 .Modify_Recipe {
     text-align: center; 
-    margin: 1em;
 }
 
-#submit-mod, #restart-mod {
+#submit-mod, #cancel-mod {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-size: .90rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
     margin: .5em;
-    padding: .25em;
+    margin-top: -3em;
     margin-bottom: 2em;
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: .75em;
+    transition: all .15s;
+}
+
+#submit-mod:hover, #cancel-mod:hover {
+    cursor: pointer; 
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#submit-mod:active, #cancel-mod:active {
+    background-color: #881600;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    #submit-mod, #cancel-mod {
+        font-size: 1.25rem;
+        margin-top: -.5em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #submit-mod, #cancel-mod {
+        font-size: 1.5rem;
+        margin-top: -.25em;
+    }
 }
