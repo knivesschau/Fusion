@@ -69,6 +69,11 @@ export default class LoginPage extends Component {
 
                 </form>
 
+                <div className="Demo_Info">
+                    <span id="demo-user">Demo User: thinkful2020!</span>
+                    <span id="demo-pass">Demo Password: GetC0ok1ng!</span>
+                </div>
+
                 <ErrorValidation id="login-error" message={this.state.error}/>
 
             </section>

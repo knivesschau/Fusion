@@ -147,23 +147,23 @@ export default class RegistrationPage extends Component {
     submitRegistration = e => {
         e.preventDefault();
 
-        const {username, password} = e.target;
+        const {register_username, register_password} = e.target;
 
         this.setState({
             submitError: null
         });
 
         AuthApiService.postUser({
-            user_name: username.value,
-            password: password.value
+            user_name: register_username.value,
+            password: register_password.value
         })
             .then(user => {
-                username.value = '';
-                password.value = '';
+                register_username.value = '';
+                register_password.value = '';
                 this.props.onValidRegistration();
             })
             .then(() => {
-                window.alert("Successfully registered! Please log in to begin cooking.");
+                window.alert("Successfully registered! Please log in to begin fusing.");
             })
             .then(() => {
                 window.location='/login'

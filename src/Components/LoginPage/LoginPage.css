@@ -18,6 +18,17 @@
     margin-top: -1.75em;
 }
 
+.Demo_Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    font-size: .95rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+    color: black;
+}
+
 #login-tag {
     font-size: 1.40rem;
     color: white; 
@@ -88,6 +99,10 @@
 
     .Login_Form {
         margin-top: -2.5em;
+    }
+
+    .Demo_Info {
+        font-size: 1.5rem;
     }
 
     #login-tag {

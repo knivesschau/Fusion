@@ -5,10 +5,23 @@
     font-weight: bold;
 }
 
+.error-catcher {
+    text-align: center;
+    border: 1px solid grey;
+    background-color: rgb(245, 245, 245, .9);
+    margin: 1em;
+    margin-top: 5em;
+    color: red; 
+}
+
 /* tablet and desktop styles */ 
 @media only screen and (min-width: 768px) {
     .error {
         font-size: 1.5rem;
+    }
+
+    .error-catcher {
+        margin-top: 10em;
     }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fusionContext from '../../fusionContext';
+import handmixer from '../../images/hand-mixer.png';
 import './BaseRecipe.css';
 
 export default class BaseRecipe extends Component {
@@ -22,12 +23,13 @@ export default class BaseRecipe extends Component {
             <section className="Base_Recipe">
                 
                 <div className="Base_RecipeInfo">
+                    <img src={handmixer} id="hand-mixer-icon" alt="hand mixer"/>
                     <h2 id="base-title">{base_name}</h2>
                     <h3 id="starting-cuisine">Culinary Style: {cuisine_name}</h3>
                 </div>
 
                 <div className="Base_Ingredients">
-                        <h4 id="base-ingredients"><u>Ingredients</u></h4>
+                        <h4 id="ingredients-title">Ingredients</h4>
                         
                         <ul id="base-ingredients">
                             {starter_ingredients.map((ingredient, i) => {
@@ -39,7 +41,7 @@ export default class BaseRecipe extends Component {
                     </div>
                 
                     <div className="Steps_Section">
-                        <h4 id="steps-title"><u>Steps</u></h4>
+                        <h4 id="steps-title">Steps</h4>
                         
                         <ol id="base-steps">
                             {starter_steps.map((step, i) => {

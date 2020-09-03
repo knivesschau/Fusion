@@ -24,6 +24,9 @@ export default class BaseView extends Component {
 
         return (
             <section className="View_Base">
+                <button type="button" id="choose-recipe" onClick={e => this.props.history.push(`/fuse/${recipe_id}`)}>Fuse Recipe</button>
+                <button type="button" id="pick-another" onClick={this.handleCancelClick}>Pick Another Recipe</button>
+                
                 {/* pass all starter recipe data to BaseRecipe Component via props */}
                 <BaseRecipe
                     recipe_id={baseRecipe.recipe_id}
@@ -32,9 +35,6 @@ export default class BaseView extends Component {
                     ingredients={baseRecipe.ingredients}
                     steps={baseRecipe.steps}
                 />
-                
-            <button type="button" id="choose-recipe" onClick={e => this.props.history.push(`/fuse/${recipe_id}`)}>Fuse Recipe</button>
-            <button type="button" id="pick-another" onClick={this.handleCancelClick}>Pick Another Recipe</button>
 
             </section>
         );
