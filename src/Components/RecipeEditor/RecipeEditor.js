@@ -62,8 +62,6 @@ export default class RecipeEditor extends Component {
         },
             this.validateIngredients
         );
-
-        console.log(this.state.ingredient_changes.value);
     };
 
     // capture step changes 
