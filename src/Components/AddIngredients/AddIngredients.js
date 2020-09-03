@@ -9,18 +9,17 @@ export default function AddIngredients() {
         return ingredients.ingredient.map((ingredient, i) => 
             <ul id="add-ingredients">
                 <li id="add-ingredients-list" key={i}>
-                    
                     <label htmlFor="add-ingredients-inputs">
                         <input
                             required
                             className="Add_Ingredients"
                             type="text"
-                            id={`fuse-ingredients-add-${i}`}
+                            id="fuse-ingredients-add"
                             name="fuse_ingredients"
+                            placeholder="Type new ingreident here"
                             value={ingredient || ""}
                             onChange={handleUpdate.bind(i)}/>
                     </label>
-
                     <button type="button" id="remove-ingredient" onClick={removeInput.bind({i})}>Remove</button>
                 </li>
             </ul>

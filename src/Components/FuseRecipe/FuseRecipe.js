@@ -10,7 +10,7 @@ export default class FuseRecipe extends Component {
         super(props);
 
         this.state = {
-            ...props 
+            ...props,
         };
 
         this.baseState = this.state;
@@ -25,9 +25,9 @@ export default class FuseRecipe extends Component {
         },
     };
 
-    handleResetClick = () => {
+    handleCancelClick = () => {
         this.setState(this.baseState);
-        window.alert("Recipe reset! All steps and ingredients have been reset to their original instructions.");
+        window.location='/starter-recipes'
     };
 
     static contextType = fusionContext;
@@ -87,7 +87,7 @@ export default class FuseRecipe extends Component {
                         cuisine_id={baseRecipe.cuisine_id}/>
 
                     <button type="submit" id="submit-recipe">Save Recipe</button>
-                    <button type="reset" onClick={this.handleResetClick} id="start-over">Start Over</button>
+                    <button type="reset" onClick={this.handleCancelClick} id="start-over">Cancel</button>
                 </form>
 
             </section>

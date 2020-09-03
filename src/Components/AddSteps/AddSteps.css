@@ -1,0 +1,78 @@
+/* mobile styles first, min 320px */
+#add-step {
+    font-size: .90rem;
+    margin-top: 1.5em;
+}
+
+#add-step {
+    background-color: #A9C09B;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#remove-step {
+    background-color: #fac59d;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    transition: all .15s;
+}
+
+#add-step:hover, #remove-step:hover {
+    cursor: pointer; 
+    text-shadow: 0 0 32px rgba(255, 255, 255, 1);
+    color: white;
+    border-color: white;
+}
+
+#add-step:active, #remove-step:active {
+    background-color: #881600;
+}
+
+#remove-step {
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+#fuse-steps-add {
+    vertical-align: middle;
+    width: 80%;
+    margin: .25em;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    #add-step {
+        font-size: 1.25rem;
+        padding-top: .35em;
+        padding-bottom: .35em;
+        margin-top: .25em;
+    }
+    
+    #remove-step {
+        font-size: 1rem;
+        margin: 1em;
+        padding-top: .25em;
+        padding-bottom: .25em;
+    }
+
+    #fuse-steps-add {
+        font-size: 1.10rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #add-step {
+        font-size: 1.45rem;
+    }
+    
+    #remove-step {
+        font-size: 1.15rem;
+    }
+
+    #fuse-steps-add {
+        font-size: 1.25rem;
+    }
+} 

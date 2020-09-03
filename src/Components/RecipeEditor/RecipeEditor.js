@@ -3,6 +3,10 @@ import AddIngredients from '../AddIngredients/AddIngredients';
 import AddSteps from '../AddSteps/AddSteps';
 import fusionContext from '../../fusionContext';
 import ErrorValidation from '../../ErrorHandlers/ErrorValidation';
+import floursack from '../../images/flour-sack.png';
+import fryingpan from '../../images/frying-pan.png';
+import ovenmitt from '../../images/oven-mitt.png';
+import cookbook from '../../images/cookbook.png';
 import './RecipeEditor.css';
 
 export default class RecipeEditor extends Component {
@@ -165,10 +169,13 @@ export default class RecipeEditor extends Component {
                 <h1 id="fuse-info">Fusing: {base_name}</h1>
 
                 <div className="Title_Editor">
+                    <img src={ovenmitt} id="mitt-fuse-icon" alt="oven mitt"/>
+
                     <h2 id="title-instructor">Enter a New Recipe Title:</h2>
                     
                     <label htmlFor="name-changer-input">
                         <input 
+                            type="text"
                             id="name-changer" 
                             name="fuse_name" 
                             defaultValue={base_name}
@@ -180,15 +187,18 @@ export default class RecipeEditor extends Component {
                 </div>
                 
                 <div className="Fuse_Cuisine">
-                    <p id="cuisine-info">Your starting culinary style is: {cuisine_name} </p>
+                    <img src={cookbook} id="cookbook-fuse-icon" alt="cookbook"/>
+
+                    <h2 id="cuisine-info">Your starting culinary style is: {cuisine_name}</h2>
                     <input type="hidden" name="base_cuisine" defaultValue={cuisine_id}/>
 
                     <label htmlFor="cuisines" name="fuse_cuisine">
-                        Select your "Fusion" style (or, select "None"): 
+                        <p id="select-cuisine"> Select your "Fusion" style (or, select "None"): </p>
+
                         <select 
                             required 
                             name="fuse_cuisine"
-                            id="fusion_cuisine">
+                            id="fusion-cuisine">
 
                             <option value="">--Select One--</option>
 
@@ -209,6 +219,8 @@ export default class RecipeEditor extends Component {
                 </div>
 
                 <div className="Edit_Ingredients">
+                    <img src={floursack} id="flour-fuse-icon" alt="flour sack"/>
+
                     <h2 id="ingredient-title">Ingredients</h2>
 
                     <p id="ingredient-instructor">Change or modify the recipe's ingredients:</p>
@@ -223,7 +235,7 @@ export default class RecipeEditor extends Component {
                                         className="Fuse_Ingredients"
                                         key={i}
                                         type="text" 
-                                        id={`fuse-ingredients-${i}`}
+                                        id="fuse-ingredients"
                                         name="fuse_ingredients"
                                         defaultValue={ingredient}
                                         onChange={e => this.updateIngredients(e.currentTarget.value)}/>
@@ -242,6 +254,8 @@ export default class RecipeEditor extends Component {
                 </div>
 
                 <div className="Edit_Steps">
+                    <img src={fryingpan} id="pan-fuse-icon" alt="frying pan"/>
+
                     <h2 id="step-title">Steps</h2>
 
                     <p id="step-instructor">Change or modify the recipe's steps:</p>
@@ -255,7 +269,7 @@ export default class RecipeEditor extends Component {
                                         <textarea 
                                             className="Fuse_Steps"
                                             key={i}
-                                            id={`fuse-steps-${i}`}
+                                            id="fuse-steps"
                                             name="fuse_steps"
                                             rows="10"
                                             defaultValue={step}

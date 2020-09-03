@@ -6,7 +6,7 @@ h1 {
     font-family: 'Playfair Display'
 }
 
-h2, p, input[type="text"], select {
+h2, p, input[type="text"], select, textarea {
     font-family: 'Montserrat';
 }
 

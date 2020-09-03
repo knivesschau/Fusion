@@ -1,32 +1,183 @@
+/* mobile styles first, min 320px */
 .Recipe_Editor {
     margin: 1em;
 }
 
 .Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
-    border: 1px solid black;
-    margin-bottom: 1em;
-    padding: .5em;
+    background-color: rgb(245, 245, 245, .9);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 1em; 
+    box-shadow: inset -3px -2px 5px 0 black;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
 }
-
-#fuse-info {
-    font-size: xx-large;
-}
-
-#name-changer {
-    width: 90%;
-}
-
 .Fuse_Ingredients {
-    margin: .25em;
+    margin: .45em;
     width: 90%;
-}
-
-#edit-list-steps {
-    padding-left: 1em;
 }
 
 .Fuse_Steps {
     vertical-align: middle;
     width: 80%;
     margin: .25em;
+}
+
+#fuse-info {
+    font-size: 1.75rem;
+    color: white;
+    text-shadow: 3px 2px 2px black;
+}
+
+#title-instructor, #ingredient-title, #step-title, #cuisine-info {
+    font-size: 1.10rem;
+    text-shadow: 3px 2px 2px white;
+    margin-top: .15em;
+} 
+
+#select-cuisine, #ingredient-instructor, #step-instructor {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#name-changer {
+    align-self: center;
+    width: 90%;
+}
+
+#name-changer, #fusion-cuisine, #fuse-ingredients, #fuse_steps, textarea {
+    font-size: .90rem;
+    transition: border .3s ease-out; 
+}
+
+textarea:focus, #name-changer:focus, #fusion-cuisine:focus, #fuse-ingredients:focus, #fuse_steps:focus {
+    border: 10px solid #881600;
+    border-style: none none none solid;
+    background-color: white;
+}
+
+#fusion-cuisine {
+    border-radius: 2em; 
+    padding: .25em;
+    justify-content: center;
+    background-color: white;
+}
+
+#edit-list-steps {
+    padding-left: 1em;
+}
+
+#mitt-fuse-icon, #cookbook-fuse-icon, #pan-fuse-icon, #flour-fuse-icon {
+    height: 45%;
+    width: 45%;
+    margin-top: -1em;
+    margin-bottom: -.5em;
+}
+
+/* tablet and desktop styles */ 
+@media only screen and (min-width: 768px) {
+    .Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
+        margin-left: 8.5em;
+        margin-right: 8.5em;
+        padding: 1.75em;
+    }
+
+    .Fuse_Ingredients {
+        margin: .5em;
+        width: 95%;
+        padding: .25em;
+    }
+    
+    .Fuse_Steps {
+        width: 80%;
+        margin: .5em;
+    }
+
+    textarea {
+        padding: .75em;
+    }
+
+    #name-changer {
+        padding: .5em;
+    }
+
+    #edit-list-steps {
+        font-size: 1.25rem;
+    }
+
+    #fusion-cuisine {
+        padding: .5em;
+    }
+
+    #name-changer, #fuse-ingredients, #fuse-steps, #fusion-cuisine {
+        font-size: 1.10rem;
+    }
+
+    #fuse-info {
+        font-size: 2.5rem;
+    }
+
+    #title-instructor, #cuisine-info, #ingredient-title, #step-title {
+        font-size: 1.5rem;
+    }
+
+    #select-cuisine, #ingredient-instructor, #step-instructor {
+        font-size: 1.25rem;
+    }
+
+    #mitt-fuse-icon, #cookbook-fuse-icon, #pan-fuse-icon, #flour-fuse-icon {
+        height: 35%;
+        width: 35%;
+    }   
+}
+
+@media only screen and (min-width: 1200px) {
+    .Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+
+    .Fuse_Ingredients {
+        padding: .5em;
+    }
+
+    #fuse-info {
+        font-size: 3rem;
+    }
+
+    #title-instructor, #cuisine-info, #ingredient-title, #step-title {
+        font-size: 1.75rem;
+    }
+
+    #select-cuisine, #ingredient-instructor, #step-instructor {
+        font-size: 1.45rem;
+    }
+
+    #name-changer, #fuse-ingredients, #fuse-steps, #fusion-cuisine {
+        font-size: 1.25rem;
+    }
+
+    #edit-list-steps {
+        font-size: 1.5rem;
+    }
+
+    #mitt-fuse-icon, #cookbook-fuse-icon, #pan-fuse-icon, #flour-fuse-icon {
+        height: 25%;
+        width: 25%;
+    }  
+}
+
+@media only screen and (min-width: 1600px) {
+    .Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
+        margin-left: 30em;
+        margin-right: 30em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .Title_Editor, .Fuse_Cuisine, .Edit_Ingredients, .Edit_Steps {
+        margin-left: 40em;
+        margin-right: 40em;
+    }
 }

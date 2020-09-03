@@ -58,7 +58,6 @@
 }
 
 #modify-recipe, #delete-recipe {
-    cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
     background-color: #A9C09B;
@@ -78,6 +77,7 @@
 }
 
 #modify-recipe:hover, #delete-recipe:hover {
+    cursor: pointer;
     text-shadow: 0 0 32px rgba(255, 255, 255, 1);
     color: white;
     border-color: white;

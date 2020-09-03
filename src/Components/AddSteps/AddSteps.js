@@ -9,18 +9,17 @@ export default function AddSteps() {
         return steps.step.map((step, i) => 
             <ul id="additional-steps-list">
                 <li id="additional-steps" key={i}>
-                    
                     <label htmlFor="add-steps-inputs">
                         <textarea
                             required
                             className="Add_Steps"
                             rows="10"
-                            id={`fuse-steps-add-${i}`}
+                            id="fuse-steps-add"
                             name="fuse_steps"
+                            placeholder="Type additional step here"
                             value={step || ""}
                             onChange={handleUpdate.bind(i)}/>
                     </label>
-
                     <button type="button" id="remove-step" onClick={removeInput.bind({i})}>Remove</button>
                 </li>
             </ul>
